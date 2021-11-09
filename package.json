@@ -8,15 +8,20 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.12.7",
+    "animate.css": "^4.1.1",
     "ant-design-vue": "^1.7.8",
+    "axios": "^0.24.0",
     "bootstrap": "^5.0.0-beta3",
-    "vue": "^3.2.16"
+    "tiny-emitter": "^2.1.0",
+    "vue": "^3.2.16",
+    "vue-final-modal": "^3.4.3",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.3.11",
-    "tailwindcss": "^2.2.17",
+    "tailwindcss": "^2.2.19",
     "vite": "^2.6.4"
   }
 }
