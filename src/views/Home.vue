@@ -124,11 +124,9 @@
       <div class="modal__content">
       <ul 
       id="app"
-
       >
 
-      <li> {{ cidades }} </li>
-
+ 
       </ul>
       </div>
     </vue-final-modal>
@@ -153,7 +151,6 @@ export default {
 
 
 onMounted(() => {
-  //HandleModal()
   showState()
 })
 
@@ -163,12 +160,14 @@ onMounted(() => {
 //ABRIR MODAL//
    const showModal = ref(false)
    const info = ref(null)
+   //const info = reactive([])
+   const cidades = reactive([])
 
   function HandleModal(){
     showModal.value = true
   }
 
-const cidades = reactive([])
+
 
 function showState(){
 
@@ -176,22 +175,13 @@ function showState(){
       .get('https://servicodados.ibge.gov.br/api/v1/localidades/estados/RN/municipios')
       .then(response => (info.value = response.data))
 
+      const listItems = info
 
+      listItems.forEach((item) => {
+        cidades.push(item.nome)
+     })
 
-
-      console.log(typeof(info))
-      console.log(info)
-
-
-
-Object.keys(info).map(function(key, index) {
-  cidades.push(info)
-});
-
-console.log(info);
-
-    
-    
+      console.log()
 }
 
 
@@ -201,6 +191,7 @@ console.log(info);
    showState,
    info,
    cidades,
+   
 
 
    }
