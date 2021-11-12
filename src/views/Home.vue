@@ -414,7 +414,9 @@
       <span class="modal__title text-center mt-2"> NOME DO ESTADO </span>
       <div class="modal__content">
         <ul id="app">
-          <li></li>
+          <li  v-for="item in items" :key="item.message">
+           {{ municipios }}
+          </li>
         </ul>
       </div>
     </vue-final-modal>
