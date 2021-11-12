@@ -406,18 +406,20 @@
       classes="modal-container"
       content-class="modal-content"
     >
-      <button class="modal__close" @click="showModal = false">
-        <!-- <mdi-close
+    <!-- <button class="modal__close" @click="showModal = false">
+         <mdi-close
           ><img style="width: 10px" src="../images/X.png" alt=""
-        /></mdi-close> -->
-      </button>
-      <span class="modal__title text-center mt-2"> NOME DO ESTADO </span>
+        /></mdi-close> 
+      </button>-->
+      <span class="modal__title text-center mt-2">  </span>
       <div class="modal__content">
-        <ul id="app">
-          <li  v-for="item in items" :key="item.message">
-           {{ municipios }}
+      <div id="list">
+        <ul>
+          <li id="item" v-for="item in municipios" :key="item.id">
+           {{ item }}
           </li>
         </ul>
+      </div>
       </div>
     </vue-final-modal>
   </div>
@@ -542,6 +544,27 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#list::-webkit-scrollbar {
+  width: 20px;
+  
+}
+
+#list::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 200px;
+  
+}
+
+#list::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: #0A686C;
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  
+}
+
+
 #background {
   background-image: url(../images/FUNDO.png);
   background-size: cover;
@@ -644,9 +667,13 @@ svg path:hover {
   transition: 0.3s;
 }
 
+
+/* MODAL */
+
 .modal-container div {
-  width: 600px;
-  height: 300px;
+  width: 590px;
+  height: 500px;
+   border-radius: 10px;
 }
 
 .modal-container {
@@ -656,6 +683,7 @@ svg path:hover {
   align-items: center;
   backdrop-filter: blur(4px);
   height: 100vh;
+ 
 }
 
 .modal-content {
@@ -663,11 +691,13 @@ svg path:hover {
   display: flex;
   flex-direction: column;
   margin: 1rem;
-  padding-right: 1px;
+  text-align: center;
+  align-items: center;
   padding-left: 5px;
   border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
   background: #fff;
+  
 }
 .modal__title {
   margin: 0 2rem 0 0;
@@ -684,5 +714,35 @@ svg path:hover {
 
 .pointer {
   cursor: pointer;
+}
+
+#list{
+width: 560px;
+height: 430px;
+overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 25px;
+  padding-right: 10px;
+}
+
+
+#item{
+list-style-type: none;
+margin-bottom: 20px;
+background-image: url(../images/list.svg);
+background-size: 400px;
+background-repeat: no-repeat;
+margin-left: 40px;
+height: 100px;
+text-align: center;
+text-decoration: solid;
+border-radius: 50px;
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+color: #0A686C;
+
+padding-top: 33px;
+
+
 }
 </style>
