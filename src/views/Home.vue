@@ -165,7 +165,7 @@
                 />
               </a>
 
-              <a xlink:title="RN" class="pointer" @click="showModal = true">
+              <a  id="RN" onclick="Estado" xlink:title="RN" class="pointer" @click="showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -406,11 +406,12 @@
       classes="modal-container"
       content-class="modal-content"
     >
-    <!-- <button class="modal__close" @click="showModal = false">
+    
+   <button class="modal__close" @click="showModal = false">
          <mdi-close
           ><img style="width: 10px" src="../images/X.png" alt=""
         /></mdi-close> 
-      </button>-->
+      </button>
       <span class="modal__title text-center mt-2">  </span>
       <div class="modal__content">
       <div id="list">
@@ -438,6 +439,9 @@ export default {
     //ABRIR MODAL//
     const showModal = ref(false);
     const municipios = reactive([]);
+    const state = [];
+
+
 
     function HandleModal() {
       showModal.value = true;
@@ -538,6 +542,7 @@ export default {
       HandleModal,
       showState,
       municipios,
+      state
     };
   },
 };
@@ -671,7 +676,7 @@ svg path:hover {
 /* MODAL */
 
 .modal-container div {
-  width: 590px;
+  width: 600px;
   height: 500px;
    border-radius: 10px;
 }
@@ -693,7 +698,7 @@ svg path:hover {
   margin: 1rem;
   text-align: center;
   align-items: center;
-  padding-left: 5px;
+  padding-left: 1px;
   border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
   background: #fff;
