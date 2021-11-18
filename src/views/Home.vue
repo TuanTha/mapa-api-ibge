@@ -165,7 +165,7 @@
                 />
               </a>
 
-              <a  id="RN" onclick="Estado" xlink:title="RN" class="pointer" @click="showModal = true">
+              <a  id="RN" xlink:title="RN" class="pointer" @click="showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -439,7 +439,8 @@ export default {
     //ABRIR MODAL//
     const showModal = ref(false);
     const municipios = reactive([]);
-    const state = [];
+    
+
 
 
 
@@ -449,13 +450,20 @@ export default {
 
     const showState = async () => {
       // Desestruturando a variável data (que vem da função getAll)
-      const { data } = await services.filterStates.getAll();
+      const { data } = await services.filterStates.getAll({
+        state: "RN"
+        
+      });
 
-      // ==========================================================
-      // 1 forma -> forEach (para cada)
+     
       data.forEach((item) => {
-        // Pegando o nome de cada municipio e jogando dentro do array reativo:
         municipios.push(item.nome);
+
+
+
+
+
+
 
         // Criando array com value e label (existem casos que podem precisar)
         // municipios.push({value: item.id, label: item.nome});
@@ -542,7 +550,7 @@ export default {
       HandleModal,
       showState,
       municipios,
-      state
+      
     };
   },
 };
