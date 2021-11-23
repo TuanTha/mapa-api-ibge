@@ -338,7 +338,7 @@
                 />
               </a>
 
-              <a xlink:title="AC" class="pointer" @click="RN(); showModal= true">
+              <a xlink:title="AC" class="pointer" @click="Rn(); showModal=true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -445,6 +445,7 @@ export default {
     //ABRIR MODAL//
     const showModal = ref(false);
     const municipios = reactive([]);
+    
     // var state = 'CE'
     // let state = ('RN')
 
@@ -456,11 +457,17 @@ export default {
 
     
 
-    const state = ref('MG')
+    
 
-     function RN() {
-        state.push('RN')
-     }
+
+    const state = reactive(['RN']);
+
+     function Rn() {
+      //state.shift();
+      state.push('RN');
+      
+      };
+    
     
 
 
@@ -471,14 +478,16 @@ export default {
 
    
 
-    console.log(state)
+    
       
       
 
     const showState = async () => {
-      const { data } = await services.filterStates.getAll(state.value);
+      const { data } = await services.filterStates.getAll(state);
 
-      console.log(typeof(state.value));
+      console.log(typeof(state));
+      console.log(state)
+      console.log()
     
       data.forEach((item) => {
         municipios.push(item.nome);
@@ -492,7 +501,9 @@ export default {
       HandleModal,
       showState,
       municipios,
-      RN
+      Rn,
+      state
+      
     
     };
   },
