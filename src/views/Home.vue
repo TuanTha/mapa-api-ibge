@@ -165,7 +165,12 @@
                 />
               </a>
 
-              <a  id="RN" xlink:title="RN" class="pointer" @click="showModal = true">
+              <a
+                id="RN"
+                xlink:title="RN"
+                class="pointer"
+                @click="showModal = true"
+              >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -333,7 +338,7 @@
                 />
               </a>
 
-              <a xlink:title="AC" class="pointer" @click="showModal = true">
+              <a xlink:title="AC" class="pointer" @click="RN(); showModal= true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -388,7 +393,9 @@
 
       <div id="busca">
         <h3 id="texto-interface"><b>DIGITE O NOME DO UF</b></h3>
-        <input type="text" placeholder="DIGITE O NOME DO ESTADO" id="place" />
+        <input type="text" placeholder="DIGITE O NOME DO ESTADO" id="place" 
+        v-model="state"
+         />
       </div>
 
       <div id="bottom">
@@ -406,21 +413,20 @@
       classes="modal-container"
       content-class="modal-content"
     >
-    
-   <button class="modal__close" @click="showModal = false">
-         <mdi-close
+      <button class="modal__close" @click="showModal = false">
+        <mdi-close
           ><img style="width: 10px" src="../images/X.png" alt=""
-        /></mdi-close> 
+        ></mdi-close>
       </button>
-      <span class="modal__title text-center mt-2">  </span>
+      <span class="modal__title text-center mt-2"> </span>
       <div class="modal__content">
-      <div id="list">
-        <ul>
-          <li id="item" v-for="item in municipios" :key="item.id">
-           {{ item }}
-          </li>
-        </ul>
-      </div>
+        <div id="list">
+          <ul>
+            <li id="item" v-for="item in municipios" :key="item.id">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
       </div>
     </vue-final-modal>
   </div>
@@ -439,144 +445,77 @@ export default {
     //ABRIR MODAL//
     const showModal = ref(false);
     const municipios = reactive([]);
+    // var state = 'CE'
+    // let state = ('RN')
+
+    // const state = 'CE'
+
+     // const state = reactive({
+    //   estado: 'CE',
+    // })
+
     
 
+    const state = ref('MG')
 
+     function RN() {
+        state.push('RN')
+     }
+    
 
 
     function HandleModal() {
       showModal.value = true;
     }
+   
+
+   
+
+    console.log(state)
+      
+      
 
     const showState = async () => {
-      // Desestruturando a variável data (que vem da função getAll)
-      const { data } = await services.filterStates.getAll({
-        state: "RN"
-        
-      });
+      const { data } = await services.filterStates.getAll(state.value);
 
-     
+      console.log(typeof(state.value));
+    
       data.forEach((item) => {
         municipios.push(item.nome);
-
-
-
-
-
-
-
-        // Criando array com value e label (existem casos que podem precisar)
-        // municipios.push({value: item.id, label: item.nome});
       });
 
       console.log(municipios);
-      // ==========================================================
-
-      // ==========================================================
-
-      // 2 forma -> for (loop padrão) + push (empurrar pro array definido)
-      // for (let i = 0; i < data.length; i++) {
-
-      // Pega tudo:
-      //   municipios.push(data[i]);
-
-      // Pega somente o "nome"
-      //   municipios.push(data[i].nome);
-
-      // }
-
-      // ==========================================================
-
-      // ==========================================================
-
-      // 3 forma -> map
-      // É possível mapear seu array e retornar ele em forma de value e label
-      // console.log(
-      //   data.map((item) => {
-      //     return {
-      //       value: item.id,
-      //       label: item.nome,
-      //     };
-      //   })
-      // );
-
-      // Quando mapear, também é possível definir os params que já quer retornar
-      // const customMap = data.map(({ id, nome }) => ({
-      //     value: id,
-      //     name: nome,
-      // }))
-
-      // Também é possível retornar-lo filtrado, assim como em outros métodos de looping
-      // console.log(
-      //   data.map((item) => item.nome.toUpperCase()).sort()
-      // );
-
-      // ==========================================================
-
-      // ==========================================================
-
-      // 4 forma - object.keys -> https://mzl.la/3Fa57pq
-      // const myObject = Object.keys(data).map((item) => ({
-      //   value: item,
-      //   label: data[item].nome,
-      // }));
-
-      // ==========================================================
-
-      // ==========================================================
-      // Combinando map com forEach
-
-      // Criando variável 'mixing' que vai mapear o array de municipios (data)
-      // e retornar nome (poderia retornar value e label tbm)
-      // const mixing = data.map((item) => item.nome);
-
-      // console.log(mixing);
-
-      // Aqui eu percorro o array mixing e armazeno todo o conteúdo em outro array.
-      // mixing.forEach((item) => {
-      //   municipios.push(item);
-      // });
-
-      // console.log(municipios);
-      // ==========================================================
     };
-
-    // async function showState() {
-    // etc ...
-    // }
 
     return {
       showModal,
       HandleModal,
       showState,
       municipios,
-      
+      RN
+    
     };
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 #list::-webkit-scrollbar {
   width: 20px;
-  
 }
 
 #list::-webkit-scrollbar-track {
   background-color: #e4e4e4;
   border-radius: 200px;
-  
 }
 
 #list::-webkit-scrollbar-thumb {
   border-radius: 100px;
-  background-color: #0A686C;
+  background-color: #0a686c;
   box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
-  
 }
-
 
 #background {
   background-image: url(../images/FUNDO.png);
@@ -680,13 +619,12 @@ svg path:hover {
   transition: 0.3s;
 }
 
-
 /* MODAL */
 
 .modal-container div {
   width: 600px;
   height: 500px;
-   border-radius: 10px;
+  border-radius: 10px;
 }
 
 .modal-container {
@@ -696,7 +634,6 @@ svg path:hover {
   align-items: center;
   backdrop-filter: blur(4px);
   height: 100vh;
- 
 }
 
 .modal-content {
@@ -710,7 +647,6 @@ svg path:hover {
   border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
   background: #fff;
-  
 }
 .modal__title {
   margin: 0 2rem 0 0;
@@ -729,33 +665,30 @@ svg path:hover {
   cursor: pointer;
 }
 
-#list{
-width: 560px;
-height: 430px;
-overflow-y: auto;
+#list {
+  width: 560px;
+  height: 430px;
+  overflow-y: auto;
   overflow-x: hidden;
   margin-top: 25px;
   padding-right: 10px;
 }
 
+#item {
+  list-style-type: none;
+  margin-bottom: 20px;
+  background-image: url(../images/list.svg);
+  background-size: 400px;
+  background-repeat: no-repeat;
+  margin-left: 40px;
+  height: 100px;
+  text-align: center;
+  text-decoration: solid;
+  border-radius: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #0a686c;
 
-#item{
-list-style-type: none;
-margin-bottom: 20px;
-background-image: url(../images/list.svg);
-background-size: 400px;
-background-repeat: no-repeat;
-margin-left: 40px;
-height: 100px;
-text-align: center;
-text-decoration: solid;
-border-radius: 50px;
-font-family: 'Roboto', sans-serif;
-font-weight: bold;
-color: #0A686C;
-
-padding-top: 33px;
-
-
+  padding-top: 33px;
 }
 </style>
