@@ -8,15 +8,15 @@
 <div class="block">
     <section id="interface" >
       <div id="imagens" >
-        <div id="icons" class="w-96 ml-5 ">
+        <div id="icons" class="w-96 ml-5 lg:w-7/12">
           <img class="relative mt-2 " src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
    
-        <div id="mapa" class="absolute ml-10 mt-2">
+        <div id="mapa" class="absolute ml-10 mt-2 lg:pt-12 lg:pl-10">
           <svg
             id="brasil"
-            class="w-72 mt-4"
+            class="w-72 mt-4 lg:w-mp"
             viewBox="0 0 869 864"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -393,19 +393,20 @@
       </div>
 
 
-      <div class="mt-ot absolute ml-14 pt-0" >
-        <p class="text-ms text-lg text-center pt-2" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
-        <input type="text" placeholder="DIGITE A UF" id="place" class=" w-max px-5 text-center py-2 " 
-        v-model="state"
-         />
+      <div class="mt-ot absolute ml-14 pt-0 lg:mt-52 lg:ml-es">
+        <p class="ml-10 lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 " id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
-  <div id="bottom">
-        <button id="botao" class="w-tm rounded-lg mt-2 "> 
-         <img id="lupa" class="w-10 ml-32 py-1" src="../images/lupa.png" alt="" /> 
+        <div class="block lg:flex">
+        <input type="text" placeholder="DIGITE A UF" id="place" class=" w-max px-5 text-center py-2 lg:py-6 lg:w-96 lg:text-left lg:h-14"  
+        v-model="state" />
+
+      <div id="bottom" class="lg: pb-20">
+        <button id="botao" class="w-tm rounded-lg mt-1 lg:mt-1 lg:w-14  lg:ml-2 lg:p-1 lg:h-12 ">
+        <img id="lupa" class="w-10 my-1 ml-32 py-0 lg:ml-2 lg:w-8 " src="../images/lupa.png" alt="" />  
         </button>
         
       </div>
-
+</div>
 
       </div>
 
@@ -541,10 +542,7 @@ export default {
   border-radius: 100px;
   background-color: #0a686c;
   box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
-
-  
 }
-
 
 
 #background {
@@ -577,13 +575,9 @@ color: #0E959A
 #interface {
   display: flex;
   flex-direction: row;
-}
-
-
-
-#interface {
   margin-left: 65px;
 }
+
 
 #texto-interface {
   color: aliceblue;
@@ -659,6 +653,9 @@ svg path:hover {
   cursor: pointer;
 }
 
+
+/* FIM DO MODAL */
+
 #list {
   width: 560px;
   height: 430px;
@@ -682,14 +679,6 @@ svg path:hover {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   color: #0a686c;
-
   padding-top: 33px;
 }
-
-
-
-
-
-
-
 </style>
