@@ -22,7 +22,7 @@
             xmlns="http://www.w3.org/2000/svg"
           >
             <g filter="url(#filter0_d_7:22)">
-              <a xlink:title="SC" class="pointer" @click="showModal = true">
+              <a xlink:title="SC" class="pointer" @click="Rn('SC'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -34,7 +34,7 @@
                 />
               </a>
 
-              <a xlink:title="SC" class="pointer" @click="showModal = true">
+              <a xlink:title="SC" class="pointer" @click="Rn('SC'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -46,7 +46,7 @@
                 />
               </a>
 
-              <a xlink:title="PR" class="pointer" @click="showModal = true">
+              <a xlink:title="PR" class="pointer" @click="Rn('PR'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -58,7 +58,7 @@
                 />
               </a>
 
-              <a xlink:title="SP" class="pointer" @click="showModal = true">
+              <a xlink:title="SP" class="pointer" @click="Rn('SP'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -70,7 +70,7 @@
                 />
               </a>
 
-              <a xlink:title="RJ" class="pointer" @click="showModal = true">
+              <a xlink:title="RJ" class="pointer" @click="Rn('RJ'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -82,7 +82,7 @@
                 />
               </a>
 
-              <a xlink:title="ES" class="pointer" @click="showModal = true">
+              <a xlink:title="ES" class="pointer" @click="Rn('ES'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -94,7 +94,7 @@
                 />
               </a>
 
-              <a class="pointer" @click="showModal = true" xlink:title="BA">
+              <a class="pointer" @click="Rn('BA'); showModal = true" xlink:title="BA">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -106,7 +106,7 @@
                 />
               </a>
 
-              <a xlink:title="MG" class="pointer" @click="showModal = true">
+              <a xlink:title="MG" class="pointer" @click="Rn('MG'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -118,7 +118,7 @@
                 />
               </a>
 
-              <a xlink:title="SE" class="pointer" @click="showModal = true">
+              <a xlink:title="SE" class="pointer" @click="Rn('SE'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -130,7 +130,7 @@
                 />
               </a>
 
-              <a xlink:title="AL" class="pointer" @click="showModal = true">
+              <a xlink:title="AL" class="pointer" @click="Rn('AL');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -142,7 +142,7 @@
                 />
               </a>
 
-              <a xlink:title="PE" class="pointer" @click="showModal = true">
+              <a xlink:title="PE" class="pointer" @click="Rn('PE'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -154,7 +154,7 @@
                 />
               </a>
 
-              <a xlink:title="PB" class="pointer" @click="showModal = true">
+              <a xlink:title="PB" class="pointer" @click="Rn('PB'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -170,7 +170,7 @@
                 id="RN"
                 xlink:title="RN"
                 class="pointer"
-                @click="showModal = true"
+                @click="Rn('RN'); showModal = true"
               >
                 <path
                   fill-rule="evenodd"
@@ -183,7 +183,7 @@
                 />
               </a>
 
-              <a xlink:title="CE" class="pointer" @click="showModal = true">
+              <a xlink:title="CE" class="pointer" @click="Rn('CE'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -195,7 +195,7 @@
                 />
               </a>
 
-              <a xlink:title="PI" class="pointer" @click="showModal = true">
+              <a xlink:title="PI" class="pointer" @click="Rn('PI'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -207,7 +207,7 @@
                 />
               </a>
 
-              <a xlink:title="MA" class="pointer" @click="showModal = true">
+              <a xlink:title="MA" class="pointer" @click="Rn('MA'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -219,7 +219,7 @@
                 />
               </a>
 
-              <a xlink:title="TO" class="pointer" @click="showModal = true">
+              <a xlink:title="TO" class="pointer" @click="Rn('TO'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -231,7 +231,7 @@
                 />
               </a>
 
-              <a xlink:title="DF" class="pointer" @click="showModal = true">
+              <a xlink:title="DF" class="pointer" @click="Rn('DF'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -243,7 +243,7 @@
                 />
               </a>
 
-              <a xlink:title="GO" class="pointer" @click="showModal = true">
+              <a xlink:title="GO" class="pointer" @click="Rn('GO'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -255,7 +255,7 @@
                 />
               </a>
 
-              <a xlink:title="MS" class="pointer" @click="showModal = true">
+              <a xlink:title="MS" class="pointer" @click="Rn('MS'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -267,7 +267,7 @@
                 />
               </a>
 
-              <a xlink:title="MT" class="pointer" @click="showModal = true">
+              <a xlink:title="MT" class="pointer" @click="Rn('MT'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -279,7 +279,7 @@
                 />
               </a>
 
-              <a xlink:title="PA" class="pointer" @click="showModal = true">
+              <a xlink:title="PA" class="pointer" @click="Rn('PA');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -291,7 +291,7 @@
                 />
               </a>
 
-              <a xlink:title="AP" class="pointer" @click="showModal = true">
+              <a xlink:title="AP" class="pointer" @click="Rn('AP');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -303,7 +303,7 @@
                 />
               </a>
 
-              <a xlink:title="RR" class="pointer" @click="showModal = true">
+              <a xlink:title="RR" class="pointer" @click="Rn('RR');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -315,7 +315,7 @@
                 />
               </a>
 
-              <a xlink:title="RO" class="pointer" @click="showModal = true">
+              <a xlink:title="RO" class="pointer" @click="Rn('RO');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -327,7 +327,7 @@
                 />
               </a>
 
-              <a xlink:title="AM" class="pointer" @click="showModal = true">
+              <a xlink:title="AM" class="pointer" @click="Rn('AM'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -339,7 +339,7 @@
                 />
               </a>
 
-              <a xlink:title="AC" class="pointer" @click="Rn(); showModal=true">
+              <a xlink:title="AC" class="pointer" @click="Rn('AC'); showModal=true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -422,8 +422,9 @@
       v-model="showModal"
       classes="modal-container"
       content-class="modal-content"
+      @click-outside="ClearData()"
     >
-      <button class="modal__close" @click="showModal = false">
+      <button class="modal__close" @click="ClearData(); showModal = false">
         <mdi-close
           ><img style="width: 10px" src="../images/X.png" alt=""
         ></mdi-close>
@@ -456,28 +457,17 @@ export default {
     //ABRIR MODAL//
     const showModal = ref(false);
     const municipios = reactive([]);
-    
-    // var state = 'CE'
-    // let state = ('RN')
+    const state = reactive([]);
 
-    // const state = 'CE'
+     function Rn(uf) {
+      state.shift();
+      state.push(uf);
+      showState(uf)
+    };
 
-     // const state = reactive({
-    //   estado: 'CE',
-    // })
-
-    
-
-    
-
-
-    const state = reactive(['']);
-
-     function Rn() {
-      //state.shift();
-      state.push('RN')
-      
-      };
+    function ClearData() {
+      municipios.splice(0, municipios.length);
+    }
     
     
 
@@ -513,7 +503,8 @@ export default {
       showState,
       municipios,
       Rn,
-      state
+      state,
+      ClearData
       
     
     };
@@ -610,7 +601,7 @@ svg path:hover {
 /* MODAL */
 
 .modal-container div {
-  width: 600px;
+  width: 500px;
   height: 500px;
   border-radius: 10px;
 }
@@ -671,7 +662,7 @@ svg path:hover {
   background-image: url(../images/list.svg);
   background-size: 400px;
   background-repeat: no-repeat;
-  margin-left: 40px;
+  margin-left: 10px;
   height: 100px;
   text-align: center;
   text-decoration: solid;
