@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 // Imports Globais
+import './index.css'
 import router from './router'
 import vfmPlugin from 'vue-final-modal'
 
@@ -9,7 +10,7 @@ import vfmPlugin from 'vue-final-modal'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 // Criando e montando o App usando as dependências
-const app = createApp(App);
+const app = createApp(App)
 app.use(vfmPlugin)
 app.use(router)
 app.mount('#app')

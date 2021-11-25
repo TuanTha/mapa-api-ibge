@@ -1,21 +1,22 @@
 <template>
-  <section id="background">
+  <section class="bg-cover w-full lg:w-screen h-screen" id="background">
     <br />
-    <header id="header" style="background-color: white">
-      <h3 id="texto-header"><b>BUSQUE POR UM ESTADO</b></h3>
+    <header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-1 pt-1 lg:w-11/12 lg:ml-16 lg:h-12  ">
+      <h3  id="texto-header" class="text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
     </header>
 
-    <section id="interface">
-      <div id="imagens">
-        <div id="icons">
-          <img id="ilustra" src="../images/Ilustrações.png" alt="ilustrações" />
+<div class="block">
+    <section id="interface" >
+      <div id="imagens" >
+        <div id="icons" class="w-96 ml-5 ">
+          <img class="relative mt-2 " src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
-        <div id="mapa">
+   
+        <div id="mapa" class="absolute ml-10 mt-2">
           <svg
             id="brasil"
-            width="500"
-            height="500"
+            class="w-72 mt-4"
             viewBox="0 0 869 864"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -391,19 +392,27 @@
         </div>
       </div>
 
-      <div id="busca">
-        <h3 id="texto-interface"><b>DIGITE O NOME DO UF</b></h3>
-        <input type="text" placeholder="DIGITE O NOME DO ESTADO" id="place" 
+
+      <div class="mt-ot absolute ml-14 pt-0" >
+        <p class="text-ms text-lg text-center pt-2" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
+        <input type="text" placeholder="DIGITE A UF" id="place" class=" w-max px-5 text-center py-2 " 
         v-model="state"
          />
+
+  <div id="bottom">
+        <button id="botao" class="w-tm rounded-lg mt-2 "> 
+         <img id="lupa" class="w-10 ml-32 py-1" src="../images/lupa.png" alt="" /> 
+        </button>
+        
       </div>
 
-      <div id="bottom">
-        <button id="botao">
-          <img id="lupa" src="../images/lupa.png" alt="" />
-        </button>
+
       </div>
+
+     
+      
     </section>
+    </div>
   </section>
 
   <div>
@@ -430,6 +439,7 @@
       </div>
     </vue-final-modal>
   </div>
+  
 </template>
 
 <script>
@@ -460,11 +470,11 @@ export default {
     
 
 
-    const state = reactive(['RN']);
+    const state = reactive(['']);
 
      function Rn() {
       //state.shift();
-      state.push('RN');
+      state.push('RN')
       
       };
     
@@ -511,7 +521,12 @@ export default {
 </script>
 
 <style>
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+    margin: 0%;
+    padding: 0%;}
 
 #list::-webkit-scrollbar {
   width: 20px;
@@ -526,49 +541,34 @@ export default {
   border-radius: 100px;
   background-color: #0a686c;
   box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+
+  
 }
+
+
 
 #background {
   background-image: url(../images/FUNDO.png);
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
+
   background-repeat: no-repeat;
 }
 
 #header {
-  width: 94%;
-  height: 7%;
-  margin-left: 3%;
-  border-radius: 0.2em;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 #texto-header {
-  text-align: center;
-  padding-top: 0.3em;
-  color: #0e959a;
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+color: #0E959A
+ 
 }
 
-#ilustra {
-  position: relative;
-  height: 78vh;
-  margin-top: 50px;
-  margin-left: 60px;
-}
 
 #imagens {
   display: flex;
   flex-direction: row;
 }
 
-#mapa {
-  position: absolute;
-  margin-top: 90px;
-  margin-left: 90px;
-}
 
 #icons {
   position: relative;
@@ -579,24 +579,17 @@ export default {
   flex-direction: row;
 }
 
-#busca {
-  margin-top: 210px;
-  padding-left: 50px;
-}
+
 
 #interface {
   margin-left: 65px;
 }
 
 #texto-interface {
-  margin-bottom: 10px;
   color: aliceblue;
 }
 
 #place {
-  width: 348px;
-  padding: 12px 20px;
-  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -604,15 +597,8 @@ export default {
   outline: none;
 }
 
-#bottom {
-  margin-top: 262px;
-  margin-left: 10px;
-}
 
 #botao {
-  width: 65px;
-  height: 50px;
-  border-radius: 10%;
   border: none;
   background-color: #83d14f;
 }
@@ -621,9 +607,6 @@ export default {
   background-color: #90e755;
 }
 
-#lupa {
-  width: 35px;
-}
 
 svg path:hover {
   fill: #0e959a;
@@ -702,4 +685,11 @@ svg path:hover {
 
   padding-top: 33px;
 }
+
+
+
+
+
+
+
 </style>

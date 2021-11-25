@@ -20,7 +20,8 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^10.4.0",
-    "postcss": "^8.3.11",
+    "npml": "^0.1.0",
+    "postcss": "^8.4.0",
     "tailwindcss": "^2.2.19",
     "vite": "^2.6.4"
   }
