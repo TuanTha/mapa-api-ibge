@@ -11,11 +11,20 @@
     "animate.css": "^4.1.1",
     "ant-design-vue": "^1.7.8",
     "axios": "^0.24.0",
+    "babel": "^6.23.0",
     "bootstrap": "^5.0.0-beta3",
+    "core-js": "^3.19.1",
+    "eslint": "^8.3.0",
+    "install": "^0.13.0",
+    "lib.sass": "^1.0.4",
+    "sass": "^1.43.5",
+    "sass-loader": "^12.3.0",
     "tiny-emitter": "^2.1.0",
     "vue": "^3.2.16",
     "vue-final-modal": "^3.4.3",
-    "vue-router": "4"
+    "vue-loading-overlay": "^4.0",
+    "vue-router": "4",
+    "vue-spinner": "^1.0.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",

@@ -5,6 +5,8 @@
       <h3  id="texto-header" class="text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
     </header>
 
+    <Preloader> </Preloader>
+
 <div class="block">
     <section id="interface" >
       <div id="imagens" >
@@ -447,8 +449,13 @@
 <script>
 import { ref, onMounted, reactive } from "vue";
 import services from "../services";
+import Preloader from './Preloader.vue'
 
 export default {
+  components: {
+    Preloader
+  },
+  
   setup() {
     onMounted(() => {
       showState();
@@ -504,7 +511,8 @@ export default {
       municipios,
       Rn,
       state,
-      ClearData
+      ClearData,
+     
       
     
     };
