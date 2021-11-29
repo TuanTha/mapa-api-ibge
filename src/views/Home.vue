@@ -399,11 +399,12 @@
         <p class="ml-10 lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 " id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
         <div class="block lg:flex">
-        <input type="text" placeholder="DIGITE A UF" id="place" class=" w-max px-5 text-center py-2 lg:py-6 lg:w-96 lg:text-left lg:h-14"  
-        v-model="state" />
+        <input onfocus="this.value=''"  v-on:keyup.enter="showModal = true; Rn(state)" type="text" placeholder="DIGITE A UF" id="place" class=" w-max px-5 text-center py-2 lg:py-6 lg:w-96 lg:text-left lg:h-14"  
+        v-model="state">
+
 
       <div id="bottom" class="lg: pb-20">
-        <button id="botao" class="w-tm rounded-lg mt-1 lg:mt-1 lg:w-14  lg:ml-2 lg:p-1 lg:h-12 ">
+        <button  @click="showModal= true; Rn(state)" id="botao" class="w-tm rounded-lg mt-1 lg:mt-1 lg:w-14  lg:ml-2 lg:p-1 lg:h-12 ">
         <img id="lupa" class="w-10 my-1 ml-32 py-0 lg:ml-2 lg:w-8 " src="../images/lupa.png" alt="" />  
         </button>
         
@@ -451,9 +452,11 @@ import { ref, onMounted, reactive } from "vue";
 import services from "../services";
 import Preloader from './Preloader.vue'
 
+
 export default {
   components: {
-    Preloader
+    Preloader,
+
   },
   
   setup() {
@@ -465,6 +468,8 @@ export default {
     const showModal = ref(false);
     const municipios = reactive([]);
     const state = reactive([]);
+    const texto = document.getElementById("place");
+
 
      function Rn(uf) {
       state.shift();
@@ -512,6 +517,10 @@ export default {
       Rn,
       state,
       ClearData,
+      texto
+    
+     
+      
      
       
     
