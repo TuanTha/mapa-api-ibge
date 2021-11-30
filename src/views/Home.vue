@@ -404,7 +404,7 @@
 
 
       <div id="bottom" class="lg: pb-20">
-        <button  @click="showModal= true; Rn(state)" id="botao" class="w-tm rounded-lg mt-1 lg:mt-1 lg:w-14  lg:ml-2 lg:p-1 lg:h-12 ">
+        <button  @click="showModal= true; Rn(state)" id="botao" class="w-tm rounded-3xl mt-1 lg:mt-1 lg:w-14  lg:ml-2 lg:p-1 lg:h-12 ">
         <img id="lupa" class="w-10 my-1 ml-32 py-0 lg:ml-2 lg:w-8 " src="../images/lupa.png" alt="" />  
         </button>
         
@@ -432,18 +432,45 @@
           ><img style="width: 10px" src="../images/X.png" alt=""
         ></mdi-close>
       </button>
-      <span class="modal__title text-center mt-2"> </span>
+      <div class="pt-3">
+      <input type="text" placeholder="&#61442;" id="place" class="mainLoginInput mt-2 mb-2 w-80 text-left p-2">
       <div class="modal__content">
         <div id="list">
           <ul>
-            <li id="item" v-for="item in municipios" :key="item.id">
+           <a class="pointer" @click="showModal2= true;"> <li id="item" v-for="item in municipios" :key="item.id">
               {{ item }}
-            </li>
+            </li> </a>
           </ul>
+        </div>
         </div>
       </div>
     </vue-final-modal>
   </div>
+
+  <!-- MODAL DE RESULTADO -->
+
+  <div>
+
+    <vue-final-modal
+      id="Mood"
+      v-model="showModal2"
+      classes="modal-container"
+      content-class="modal-content"
+      @click-outside="ClearData()"
+    >
+      <button class="modal__close" @click="showModal2 = false">
+        <mdi-close
+          ><img style="width: 10px" src="../images/X.png" alt=""
+        ></mdi-close>
+      </button>
+      <div>
+      <div class="modal__content">
+      </div>
+      </div>
+    </vue-final-modal>
+  </div>
+
+  <!-- FIM DO MODAL DE RESULTADO -->
   
 </template>
 
@@ -466,6 +493,7 @@ export default {
 
     //ABRIR MODAL//
     const showModal = ref(false);
+    const showModal2 = ref(false);
     const municipios = reactive([]);
     const state = reactive([]);
     const texto = document.getElementById("place");
@@ -486,6 +514,7 @@ export default {
 
     function HandleModal() {
       showModal.value = true;
+      showModal2.value = true;
     }
    
 
@@ -511,6 +540,7 @@ export default {
 
     return {
       showModal,
+      showModal2,
       HandleModal,
       showState,
       municipios,
@@ -531,11 +561,38 @@ export default {
 
 <style>
 
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+vertical-align: top;
+display: inline-block !important;
+padding-left: 5px;
+padding-top: 2px;
+}
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
     margin: 0%;
     padding: 0%;}
+
+#item:hover{
+color: white;
+background-image: url(../images/lista.svg);
+transition: 0.2s;
+}
+
+a.pointer{
+text-decoration: none
+}
+
+a.pointer:hover{
+text-decoration: none
+}
 
 #list::-webkit-scrollbar {
   width: 20px;
@@ -593,9 +650,9 @@ color: #0E959A
 
 #place {
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border: 1px solid #F5F5F5;
+  border-radius: 50px;
+  background-color: #F5F5F5;
   outline: none;
 }
 
@@ -618,8 +675,8 @@ svg path:hover {
 /* MODAL */
 
 .modal-container div {
-  width: 500px;
-  height: 500px;
+  width: 505px;
+  height: 560px;
   border-radius: 10px;
 }
 
@@ -636,7 +693,6 @@ svg path:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 1rem;
   text-align: center;
   align-items: center;
   padding-left: 1px;
@@ -665,7 +721,7 @@ svg path:hover {
 /* FIM DO MODAL */
 
 #list {
-  width: 560px;
+  width: 540px;
   height: 430px;
   overflow-y: auto;
   overflow-x: hidden;

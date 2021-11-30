@@ -7,6 +7,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@googlemaps/js-api-loader": "^1.12.7",
     "animate.css": "^4.1.1",
     "ant-design-vue": "^1.7.8",
