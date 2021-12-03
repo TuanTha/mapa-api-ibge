@@ -433,10 +433,10 @@
         ></mdi-close>
       </button>
       <div class="pt-3">
-      <input type="text" placeholder="&#61442;" id="place" class="mainLoginInput mt-2 mb-2 w-80 text-left p-2">
+      <input type="text" placeholder="&#61442;" id="place" class="mainLoginInput mt-2 mb-2 w-80 text-left p-2" onkeyup="search()">
       <div class="modal__content">
         <div id="list">
-          <ul>
+          <ul id="myUL">
            <a class="pointer" @click="showModal2= true;"> <li id="item" v-for="item in municipios" :key="item.id">
               {{ item }}
             </li> </a>
@@ -456,15 +456,46 @@
       v-model="showModal2"
       classes="modal-container"
       content-class="modal-content"
-      @click-outside="ClearData()"
     >
-      <button class="modal__close" @click="showModal2 = false">
+     <!-- <button class="modal__close" @click="showModal2 = false">
         <mdi-close
           ><img style="width: 10px" src="../images/X.png" alt=""
         ></mdi-close>
-      </button>
+      </button> -->
       <div>
       <div class="modal__content">
+      <nav id="navmodal" class="h-px"><h5 class="pt-1"> CIDADE - ESTADO </h5></nav>
+      <section class="ml-10 mr-10 mt-32">
+      <table>
+  <tr>
+    <td class="flex"><img src="../images/habitantes.svg" class="w-10 mr-2" alt="">Habitantes</td>
+    <td>1589</td>
+  </tr>
+  <tr>
+    <td class="flex"><img src="../images/ativos.svg" class="w-7 mr-5" alt=""> Clientes Ativos</td>
+    <td>200</td>
+  </tr>
+  <tr>
+    <td class="flex"><img src="../images/market.svg" class="w-7 mr-5" alt="">Market Share</td>
+    <td>50%</td>
+  </tr>
+  <tr>
+    <td class="flex"><img src="../images/pin.svg" class="w-5 mr-7" alt="">Penetração</td>
+    <td>20%</td>
+  </tr>
+  <tr>
+    <td class="flex"><img src="../images/churn.svg" class="w-6 mr-6" alt="">Churn</td>
+    <td>2%</td>
+  </tr>
+</table>
+</section>
+
+<a class="pointer" @click="showModal2=false" >
+<img  src="../images/voltar2.svg" class="w-14 mt-24 ml-at absolute" alt="">
+<img id="efeito"  src="../images/voltar.svg" class="w-14 mt-24 ml-at relative" alt="">
+
+
+</a>
       </div>
       </div>
     </vue-final-modal>
@@ -475,7 +506,7 @@
 </template>
 
 <script>
-import { ref, onMounted, reactive } from "vue";
+import { ref, onMounted, reactive, computed } from "vue";
 import services from "../services";
 import Preloader from './Preloader.vue'
 
@@ -496,7 +527,8 @@ export default {
     const showModal2 = ref(false);
     const municipios = reactive([]);
     const state = reactive([]);
-    const texto = document.getElementById("place");
+    
+    
 
 
      function Rn(uf) {
@@ -518,9 +550,8 @@ export default {
     }
    
 
-   
 
-    
+  
       
       
 
@@ -547,7 +578,8 @@ export default {
       Rn,
       state,
       ClearData,
-      texto
+      
+  
     
      
       
@@ -561,6 +593,7 @@ export default {
 
 <style>
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
 
@@ -574,7 +607,29 @@ padding-top: 2px;
 
 
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #0a686c;
+  color: white;
+}
+
+tr {
+  font-size: 18px;
+  color: #0a686c;
+}
+
+
 
 * {
     margin: 0%;
@@ -583,7 +638,18 @@ padding-top: 2px;
 #item:hover{
 color: white;
 background-image: url(../images/lista.svg);
-transition: 0.2s;
+transition: 0.1s;
+}
+
+#navmodal{
+  background-color: #0a686c;
+  height: 40px;
+  color: white;
+  
+}
+
+#icone{
+  background: url(../images/habitante.svg);
 }
 
 a.pointer{
@@ -744,5 +810,10 @@ svg path:hover {
   font-weight: bold;
   color: #0a686c;
   padding-top: 33px;
+}
+
+#efeito:hover{
+display: none;
+transition: 1s;
 }
 </style>
