@@ -1,4 +1,24 @@
 <template>
+
+<!-- Alert Error -->
+    <div
+         class="bg-red-200 pl-6 py-3 rounded-md text-lg items-center w-96 absolute hidden"
+         >
+      <svg
+           viewBox="0 0 24 24"
+           class="text-red-600 w-5 h-5 sm:w-5 sm:h-5 mr-3"
+           >
+        <path
+              fill="currentColor"
+              d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+              ></path>
+      </svg>
+      <span class="text-red-800"> Nenhum resultado foi encontrado. </span>
+    </div>
+    <!-- End Alert Error -->
+
+
+
   <section class="bg-cover w-full lg:w-screen h-screen" id="background">
     <br />
     <header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-1 pt-1 lg:w-11/12 lg:ml-16 lg:h-12  ">
@@ -8,14 +28,14 @@
     <Preloader> </Preloader>
 
 <div class="block">
-    <section id="interface" >
+    <section id="interface" class="ml-12" >
       <div id="imagens" >
-        <div id="icons" class="w-96 ml-5 lg:w-7/12">
-          <img class="relative mt-2 " src="../images/Ilustrações.png" alt="ilustrações" />
+        <div id="icons" class="hidden lg:w-7/12 lg:flex">
+          <img class="mt-2 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
    
-        <div id="mapa" class="absolute ml-10 mt-2 lg:pt-12 lg:pl-10">
+        <div id="mapa" class="absolute mr-5 mt-2 lg:pt-12 lg:ml-6 lg:pl-10">
           <svg
             id="brasil"
             class="w-72 mt-4 lg:w-mp"
@@ -24,7 +44,7 @@
             xmlns="http://www.w3.org/2000/svg"
           >
             <g filter="url(#filter0_d_7:22)">
-              <a xlink:title="SC" class="pointer" @click="Rn('SC'); showModal = true">
+              <a xlink:title="SC" class="pointer" @click="getStateList('SC'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -36,7 +56,7 @@
                 />
               </a>
 
-              <a xlink:title="SC" class="pointer" @click="Rn('SC'); showModal = true">
+              <a xlink:title="SC" class="pointer" @click="getStateList('SC'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -48,7 +68,7 @@
                 />
               </a>
 
-              <a xlink:title="PR" class="pointer" @click="Rn('PR'); showModal = true">
+              <a xlink:title="PR" class="pointer" @click="getStateList('PR'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -60,7 +80,7 @@
                 />
               </a>
 
-              <a xlink:title="SP" class="pointer" @click="Rn('SP'); showModal = true">
+              <a xlink:title="SP" class="pointer" @click="getStateList('SP'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -72,7 +92,7 @@
                 />
               </a>
 
-              <a xlink:title="RJ" class="pointer" @click="Rn('RJ'); showModal = true">
+              <a xlink:title="RJ" class="pointer" @click="getStateList('RJ'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -84,7 +104,7 @@
                 />
               </a>
 
-              <a xlink:title="ES" class="pointer" @click="Rn('ES'); showModal = true">
+              <a xlink:title="ES" class="pointer" @click="getStateList('ES'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -96,7 +116,7 @@
                 />
               </a>
 
-              <a class="pointer" @click="Rn('BA'); showModal = true" xlink:title="BA">
+              <a class="pointer" @click="getStateList('BA'); showModal = true" xlink:title="BA">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -108,7 +128,7 @@
                 />
               </a>
 
-              <a xlink:title="MG" class="pointer" @click="Rn('MG'); showModal = true">
+              <a xlink:title="MG" class="pointer" @click="getStateList('MG'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -120,7 +140,7 @@
                 />
               </a>
 
-              <a xlink:title="SE" class="pointer" @click="Rn('SE'); showModal = true">
+              <a xlink:title="SE" class="pointer" @click="getStateList('SE'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -132,7 +152,7 @@
                 />
               </a>
 
-              <a xlink:title="AL" class="pointer" @click="Rn('AL');showModal = true">
+              <a xlink:title="AL" class="pointer" @click="getStateList('AL');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -144,7 +164,7 @@
                 />
               </a>
 
-              <a xlink:title="PE" class="pointer" @click="Rn('PE'); showModal = true">
+              <a xlink:title="PE" class="pointer" @click="getStateList('PE'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -156,7 +176,7 @@
                 />
               </a>
 
-              <a xlink:title="PB" class="pointer" @click="Rn('PB'); showModal = true">
+              <a xlink:title="PB" class="pointer" @click="getStateList('PB'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -172,7 +192,7 @@
                 id="RN"
                 xlink:title="RN"
                 class="pointer"
-                @click="Rn('RN'); showModal = true"
+                @click="getStateList('RN'); showModal = true"
               >
                 <path
                   fill-rule="evenodd"
@@ -185,7 +205,7 @@
                 />
               </a>
 
-              <a xlink:title="CE" class="pointer" @click="Rn('CE'); showModal = true">
+              <a xlink:title="CE" class="pointer" @click="getStateList('CE'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -197,7 +217,7 @@
                 />
               </a>
 
-              <a xlink:title="PI" class="pointer" @click="Rn('PI'); showModal = true">
+              <a xlink:title="PI" class="pointer" @click="getStateList('PI'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -209,7 +229,7 @@
                 />
               </a>
 
-              <a xlink:title="MA" class="pointer" @click="Rn('MA'); showModal = true">
+              <a xlink:title="MA" class="pointer" @click="getStateList('MA'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -221,7 +241,7 @@
                 />
               </a>
 
-              <a xlink:title="TO" class="pointer" @click="Rn('TO'); showModal = true">
+              <a xlink:title="TO" class="pointer" @click="getStateList('TO'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -233,7 +253,7 @@
                 />
               </a>
 
-              <a xlink:title="DF" class="pointer" @click="Rn('DF'); showModal = true">
+              <a xlink:title="DF" class="pointer" @click="getStateList('DF'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -245,7 +265,7 @@
                 />
               </a>
 
-              <a xlink:title="GO" class="pointer" @click="Rn('GO'); showModal = true">
+              <a xlink:title="GO" class="pointer" @click="getStateList('GO'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -257,7 +277,7 @@
                 />
               </a>
 
-              <a xlink:title="MS" class="pointer" @click="Rn('MS'); showModal = true">
+              <a xlink:title="MS" class="pointer" @click="getStateList('MS'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -269,7 +289,7 @@
                 />
               </a>
 
-              <a xlink:title="MT" class="pointer" @click="Rn('MT'); showModal = true">
+              <a xlink:title="MT" class="pointer" @click="getStateList('MT'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -281,7 +301,7 @@
                 />
               </a>
 
-              <a xlink:title="PA" class="pointer" @click="Rn('PA');showModal = true">
+              <a xlink:title="PA" class="pointer" @click="getStateList('PA');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -293,7 +313,7 @@
                 />
               </a>
 
-              <a xlink:title="AP" class="pointer" @click="Rn('AP');showModal = true">
+              <a xlink:title="AP" class="pointer" @click="getStateList('AP');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -305,7 +325,7 @@
                 />
               </a>
 
-              <a xlink:title="RR" class="pointer" @click="Rn('RR');showModal = true">
+              <a xlink:title="RR" class="pointer" @click="getStateList('RR');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -317,7 +337,7 @@
                 />
               </a>
 
-              <a xlink:title="RO" class="pointer" @click="Rn('RO');showModal = true">
+              <a xlink:title="RO" class="pointer" @click="getStateList('RO');showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -329,7 +349,7 @@
                 />
               </a>
 
-              <a xlink:title="AM" class="pointer" @click="Rn('AM'); showModal = true">
+              <a xlink:title="AM" class="pointer" @click="getStateList('AM'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -341,7 +361,7 @@
                 />
               </a>
 
-              <a xlink:title="AC" class="pointer" @click="Rn('AC'); showModal=true">
+              <a xlink:title="AC" class="pointer" @click="getStateList('AC'); showModal=true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -395,17 +415,43 @@
       </div>
 
 
-      <div class="mt-ot absolute ml-14 pt-0 lg:mt-52 lg:ml-es">
-        <p class="ml-10 lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 " id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
+      <div class="mt-ot absolute pt-0 lg:mt-52 lg:ml-es">
+        <p class="ml-10 hidden lg:grid lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 " id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
-        <div class="block lg:flex">
-        <input onfocus="this.value=''"  v-on:keyup.enter="showModal = true; Rn(state)" type="text" placeholder="DIGITE A UF" id="place" class=" w-max px-5 text-center py-2 lg:py-6 lg:w-96 lg:text-left lg:h-14"  
+       <div class="block lg:flex">
+       <div class=" w-tm lg:w-96 mb-2 mt-2 lg:mt-3 ">
+    <Multiselect
+      v-model="state"
+      placeholder="Selecione um estado"
+      v-on:keyup.enter="getStateList(state); open()"
+      @select="showModal =true; getStateList(state);"
+      :closeOnSelect="true"
+      :searchable="true"
+      :options="estados"
+      :classes="{ 
+        optionSelected: 'text-white bg-green-700',
+        containerActive: 'ring ring-green-900 ring-opacity-10',
+        container: 'relative mx-auto w-full flex items-center justify-end box-border cursor-pointer border border-gray-300 rounded bg-white text-base leading-snug outline-none',
+      
+        
+
+}"
+      class="py-3"
+      
+    />
+  </div>
+
+
+
+
+       <!--
+        <input onfocus="this.value=''"  v-on:keyup.enter="showModal = true; getStateList(state)" type="text" placeholder="DIGITE A UF" id="place" class=" w-max px-5 text-center py-2 lg:py-6 lg:w-96 lg:text-left lg:h-14"  
         v-model="state">
+-->
 
-
-      <div id="bottom" class="lg: pb-20">
-        <button  @click="showModal= true; Rn(state)" id="botao" class="w-tm rounded-3xl mt-1 lg:mt-1 lg:w-14  lg:ml-2 lg:p-1 lg:h-12 ">
-        <img id="lupa" class="w-10 my-1 ml-32 py-0 lg:ml-2 lg:w-8 " src="../images/lupa.png" alt="" />  
+      <div id="bottom" class="lg: lg:mt-2">
+        <button  @click="getStateList(state); open()" id="botao" class="w-tm rounded mt-0 lg:mt-1 lg:w-14  lg:ml-2 lg:p-2">
+        <img id="lupa" class="w-10 my-1 ml-32 py-0 lg:ml-1 lg:w-8 " src="../images/lupa.png" alt="" />  
         </button>
         
       </div>
@@ -429,13 +475,30 @@
     >
       <button class="modal__close" @click="ClearData(); showModal = false">
         <mdi-close
-          ><img style="width: 10px" src="../images/X.png" alt=""
-        ></mdi-close>
+          >
+          <div class="w-auto h-auto mt-3 mr-2 "><img class="" style="width: 10px"  src="../images/X.png" alt=""
+        ></div></mdi-close>
       </button>
-      <div class="pt-3">
-      <input type="text" placeholder="&#61442;" id="place" class="mainLoginInput mt-2 mb-2 w-80 text-left p-2" onkeyup="search()">
-      <div class="modal__content">
-        <div id="list">
+
+<div id="teste">
+       <Multiselect
+     
+      placeholder="Selecione uma cidade"
+      v-model="value"
+      :closeOnSelect="true"
+      :searchable="true"
+      :options="municipios"
+      :classes="{ 
+        optionSelected: 'text-white bg-green-700',
+  optionSelectedPointed :  ' text-white bg-green-800 opacity-90 '
+}"
+      
+      
+    />
+    </div> 
+
+      <div class="modal__content mb-96">
+        <div id="list" class="">
           <ul id="myUL">
            <a class="pointer" @click="showModal2= true;"> <li id="item" v-for="item in municipios" :key="item.id">
               {{ item }}
@@ -443,7 +506,7 @@
           </ul>
         </div>
         </div>
-      </div>
+      
     </vue-final-modal>
   </div>
 
@@ -452,7 +515,6 @@
   <div>
 
     <vue-final-modal
-      id="Mood"
       v-model="showModal2"
       classes="modal-container"
       content-class="modal-content"
@@ -464,7 +526,7 @@
       </button> -->
       <div>
       <div class="modal__content">
-      <nav id="navmodal" class="h-px"><h5 class="pt-1"> CIDADE - ESTADO </h5></nav>
+      <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> Indicadores </h5></nav>
       <section class="ml-10 mr-10 mt-32">
       <table>
   <tr>
@@ -508,18 +570,21 @@
 <script>
 import { ref, onMounted, reactive, computed } from "vue";
 import services from "../services";
+import Multiselect from '@vueform/multiselect'
 import Preloader from './Preloader.vue'
 
 
 export default {
   components: {
     Preloader,
+    Multiselect
 
   },
   
   setup() {
     onMounted(() => {
       showState();
+      estado();
     });
 
     //ABRIR MODAL//
@@ -527,11 +592,14 @@ export default {
     const showModal2 = ref(false);
     const municipios = reactive([]);
     const state = reactive([]);
-    
-    
+    const estados = reactive([]);
+    const search = reactive([]);
+    const filter = computed(() => {
+       municipios.filter(cidade => {
+       cidade.name.toLowerCase().includes(search);
+    })});
 
-
-     function Rn(uf) {
+     function getStateList(uf) {
       state.shift();
       state.push(uf);
       showState(uf)
@@ -541,6 +609,13 @@ export default {
       municipios.splice(0, municipios.length);
     }
     
+    function open(){
+     if (state == '') {
+       showModal.value = false;
+     } else {
+       showModal.value = true;
+     }
+    }
     
 
 
@@ -548,11 +623,6 @@ export default {
       showModal.value = true;
       showModal2.value = true;
     }
-   
-
-
-  
-      
       
 
     const showState = async () => {
@@ -569,15 +639,31 @@ export default {
       console.log(municipios);
     };
 
+
+     const estado = async () => {
+      const { data } = await services.filterStates.getEstado();
+
+    
+      data.forEach((item) => {
+        estados.push(item.sigla);
+      });
+
+      console.log(municipios);
+    };
+
     return {
       showModal,
       showModal2,
       HandleModal,
       showState,
+      estado,
       municipios,
-      Rn,
+      estados,
+      getStateList,
       state,
       ClearData,
+      open
+      
       
   
     
@@ -591,10 +677,13 @@ export default {
 };
 </script>
 
+<style src="@vueform/multiselect/themes/default.css"></style>
+
 <style>
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
 
 
 .mainLoginInput::-webkit-input-placeholder { 
@@ -644,8 +733,6 @@ transition: 0.1s;
 #navmodal{
   background-color: #0a686c;
   height: 40px;
-  color: white;
-  
 }
 
 #icone{
@@ -706,7 +793,6 @@ color: #0E959A
 #interface {
   display: flex;
   flex-direction: row;
-  margin-left: 65px;
 }
 
 
@@ -739,6 +825,23 @@ svg path:hover {
 }
 
 /* MODAL */
+
+#teste{
+  margin-left: 140px;
+  margin-top: 10px;
+  
+  
+}
+
+#teste div{
+  margin-top: 5px;
+  height: auto !important;
+  width: 350px !important;
+  position: absolute !important; 
+  border-radius: 3px ;
+  box-shadow: none !important;
+  
+}
 
 .modal-container div {
   width: 505px;
@@ -788,11 +891,12 @@ svg path:hover {
 
 #list {
   width: 540px;
-  height: 430px;
+  height: 440px;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-top: 25px;
+  margin-bottom: 80px;
   padding-right: 10px;
+  position: absolute;
 }
 
 #item {

@@ -5,5 +5,12 @@ export default httpClient => ({
     const response = await httpClient.get('estados/' + state + '/municipios')
 
     return { data: response.data }
+  },
+
+  getEstado: async () => {
+    // Utilizando o método HTTP Get para pegar os estados
+    const response = await httpClient.get('estados/')
+
+    return { data: response.data }
   }
 })

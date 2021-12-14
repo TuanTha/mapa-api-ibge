@@ -6,12 +6,18 @@ module.exports = {
       margin: {
         ot: '350px',
         at: '415px',
-        es: '760px'
+        es: '800px',
+        qu: '30px'
       },
 
       width: {
         tm: '17.5rem',
-        mp: '500px'
+        mp: '500px',
+        bt: '54px'
+      },
+
+      height: {
+        bt: '52px'
       }
     }
   },
