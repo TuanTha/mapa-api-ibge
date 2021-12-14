@@ -476,7 +476,7 @@
       <button class="modal__close" @click="ClearData(); showModal = false">
         <mdi-close
           >
-          <div class="w-auto h-auto mt-3 mr-2 "><img class="" style="width: 10px"  src="../images/X.png" alt=""
+          <div class="w-auto h-auto mt-2.5 ml-2.5 "><img class="" style="width: 10px"  src="../images/X.png" alt=""
         ></div></mdi-close>
       </button>
 
@@ -500,7 +500,7 @@
       <div class="modal__content mb-96">
         <div id="list" class="">
           <ul id="myUL">
-           <a class="pointer" @click="showModal2= true;"> <li id="item" v-for="item in municipios" :key="item.id">
+           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="item in municipios" :key="item.id">
               {{ item }}
             </li> </a>
           </ul>
@@ -527,7 +527,7 @@
       <div>
       <div class="modal__content">
       <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> Indicadores </h5></nav>
-      <section class="ml-10 mr-10 mt-32">
+      <section class="mt-24 mr-14 ml-14   lg:ml-5 lg:mr-5 lg:mt-32">
       <table>
   <tr>
     <td class="flex"><img src="../images/habitantes.svg" class="w-10 mr-2" alt="">Habitantes</td>
@@ -553,8 +553,8 @@
 </section>
 
 <a class="pointer" @click="showModal2=false" >
-<img  src="../images/voltar2.svg" class="w-14 mt-24 ml-at absolute" alt="">
-<img id="efeito"  src="../images/voltar.svg" class="w-14 mt-24 ml-at relative" alt="">
+<img  src="../images/voltar2.svg" class="w-14 mt-14 ml-ma absolute" alt="">
+<img id="efeito"  src="../images/voltar.svg" class="w-14 mt-14 ml-ma relative" alt="">
 
 
 </a>
@@ -827,7 +827,7 @@ svg path:hover {
 /* MODAL */
 
 #teste{
-  margin-left: 140px;
+  margin-right: -70px;
   margin-top: 10px;
   
   
@@ -844,8 +844,8 @@ svg path:hover {
 }
 
 .modal-container div {
-  width: 505px;
-  height: 560px;
+  width: 420px;
+  height: 540px;
   border-radius: 10px;
 }
 
@@ -890,13 +890,15 @@ svg path:hover {
 /* FIM DO MODAL */
 
 #list {
-  width: 540px;
+  width: 410px;
   height: 440px;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 80px;
   padding-right: 10px;
+  margin-left: -10px;
   position: absolute;
+  margin-right: 10px
 }
 
 #item {
@@ -905,7 +907,6 @@ svg path:hover {
   background-image: url(../images/list.svg);
   background-size: 400px;
   background-repeat: no-repeat;
-  margin-left: 10px;
   height: 100px;
   text-align: center;
   text-decoration: solid;
