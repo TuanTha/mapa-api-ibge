@@ -415,7 +415,7 @@
       </div>
 
 
-      <div class="mt-ot absolute pt-0 lg:mt-52 lg:ml-es">
+      <div class="mt-ot center  md:ml-5 absolute pt-0 lg:mt-52 lg:ml-es">
         <p class="ml-10 hidden lg:grid lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 " id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
        <div class="block lg:flex">
@@ -476,7 +476,7 @@
       <button class="modal__close" @click="ClearData(); showModal = false">
         <mdi-close
           >
-          <div class="w-auto h-auto mt-2.5 ml-2.5 "><img class="" style="width: 10px"  src="../images/X.png" alt=""
+          <div class="w-auto h-auto mt-3 mr-3 "><img class="" style="width: 10px"  src="../images/X.png" alt=""
         ></div></mdi-close>
       </button>
 
@@ -553,8 +553,8 @@
 </section>
 
 <a class="pointer" @click="showModal2=false" >
-<img  src="../images/voltar2.svg" class="w-14 mt-14 ml-ma absolute" alt="">
-<img id="efeito"  src="../images/voltar.svg" class="w-14 mt-14 ml-ma relative" alt="">
+<img  src="../images/voltar2.svg" class="w-14 mt-14 ml-80 absolute" alt="">
+<img id="efeito"  src="../images/voltar.svg" class="w-14 mt-14 ml-80 relative" alt="">
 
 
 </a>
@@ -836,7 +836,7 @@ svg path:hover {
 #teste div{
   margin-top: 5px;
   height: auto !important;
-  width: 350px !important;
+  width: 320px !important;
   position: absolute !important; 
   border-radius: 3px ;
   box-shadow: none !important;
@@ -844,7 +844,7 @@ svg path:hover {
 }
 
 .modal-container div {
-  width: 420px;
+  width: 405px;
   height: 540px;
   border-radius: 10px;
 }
@@ -890,7 +890,7 @@ svg path:hover {
 /* FIM DO MODAL */
 
 #list {
-  width: 410px;
+  width: 390px;
   height: 440px;
   overflow-y: auto;
   overflow-x: hidden;
