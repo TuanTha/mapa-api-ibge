@@ -19,7 +19,7 @@
 
 
 
-  <section class="bg-cover w-full lg:w-screen h-screen" id="background">
+  <section class="absolute bg-cover w-full lg:w-screen h-screen" id="background">
     <br />
     <header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-1 pt-1 lg:w-11/12 lg:ml-16 lg:h-12  ">
       <h3  id="texto-header" class="text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
@@ -428,8 +428,9 @@
       :closeOnSelect="true"
       :searchable="true"
       :options="estados"
-      :classes="{ 
-        optionSelected: 'text-white bg-green-700',
+      :option-height="50"
+      openDirection="top"
+      :classes="{
         containerActive: 'ring ring-green-900 ring-opacity-10',
         container: 'relative mx-auto w-full flex items-center justify-end box-border cursor-pointer border border-gray-300 rounded bg-white text-base leading-snug outline-none',
       
@@ -480,27 +481,32 @@
         ></div></mdi-close>
       </button>
 
-<div id="teste">
+<div id="teste" class="flex">
        <Multiselect
-     
       placeholder="Selecione uma cidade"
-      v-model="value"
+      v-model="state"
+      v-on:keyup.enter="open()"
+      @select="showModal2 = true"
       :closeOnSelect="true"
       :searchable="true"
       :options="municipios"
+      :option-height="50"
       :classes="{ 
         optionSelected: 'text-white bg-green-700',
-  optionSelectedPointed :  ' text-white bg-green-800 opacity-90 '
+        containerActive: 'ring ring-green-900 ring-opacity-10',
+
+  
 }"
       
       
     />
+
     </div> 
 
       <div class="modal__content mb-96">
         <div id="list" class="">
           <ul id="myUL">
-           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="item in municipios" :key="item.id">
+           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="item in municipios || item in indice" :key="item.id">
               {{ item }}
             </li> </a>
           </ul>
@@ -527,7 +533,7 @@
       <div>
       <div class="modal__content">
       <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> Indicadores </h5></nav>
-      <section class="mt-24 mr-14 ml-14   lg:ml-5 lg:mr-5 lg:mt-32">
+      <section class="mt-24 mr-5 ml-5   lg:ml-5 lg:mr-5 lg:mt-32">
       <table>
   <tr>
     <td class="flex"><img src="../images/habitantes.svg" class="w-10 mr-2" alt="">Habitantes</td>
@@ -594,10 +600,8 @@ export default {
     const state = reactive([]);
     const estados = reactive([]);
     const search = reactive([]);
-    const filter = computed(() => {
-       municipios.filter(cidade => {
-       cidade.name.toLowerCase().includes(search);
-    })});
+    const indice = reactive([]);
+
 
      function getStateList(uf) {
       state.shift();
@@ -634,10 +638,20 @@ export default {
     
       data.forEach((item) => {
         municipios.push(item.nome);
+        indice.push(item.id);
+        
+        
+        
+        
+
       });
 
+      console.log(indice);
+
       console.log(municipios);
+      
     };
+    
 
 
      const estado = async () => {
@@ -662,7 +676,8 @@ export default {
       getStateList,
       state,
       ClearData,
-      open
+      open,
+      indice
       
       
   
@@ -844,7 +859,7 @@ svg path:hover {
 }
 
 .modal-container div {
-  width: 405px;
+  width: 400px;
   height: 540px;
   border-radius: 10px;
 }
