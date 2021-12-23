@@ -1,24 +1,24 @@
 <template>
-  <section class="flex bg-cover w-full lg:w-screen h-screen flex-col justify-start items-baseline" id="background">
+  <section class="flex bg-cover lg:w-screen h-screen flex-col" id="background">
     <br />
-    <header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-1 pt-1 lg:w-11/12 lg:ml-16 lg:h-12  ">
+    <header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-1 pt-1 lg:w-11/12 lg:ml-16 lg:h-12 pp:ml-7 ip:ml-16  ">
       <h3  id="texto-header" class="text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
     </header>
 
-    <Preloader> </Preloader>
+    <Preloader class="relative"> </Preloader>
 
 <div class="block">
-    <section id="interface" class="ml-12" >
+    <section id="interface" class="ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
       <div id="imagens" >
         <div id="icons" class="hidden lg:w-7/12 lg:flex">
           <img class="mt-2 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
    
-        <div id="mapa" class="absolute mr-5 mt-2 lg:pt-12 lg:ml-6 lg:pl-10">
+        <div id="mapa" class="absolute mr-5 mt-2 lg:pt-12 lg:ml-6 lg:pl-10 md:ml-5">
           <svg
             id="brasil"
-            class="w-72 mt-4 lg:w-mp"
+            class="w-72 mt-4 lg:w-mp ip:w-tg "
             viewBox="0 0 869 864"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -395,11 +395,11 @@
       </div>
 
 
-      <div class="mt-ot center  md:ml-5 absolute pt-0 lg:mt-52 lg:ml-es">
+      <div class="mt-ot center  mr-3 md:ml-5 md:mt-ot absolute pt-0 lg:mt-52 lg:ml-es ip:mt-al">
         <p class="ml-10 hidden lg:grid lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 " id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
-       <div class="block lg:flex">
-       <div class=" w-tm lg:w-96 mb-2 mt-2 lg:mt-3 ">
+       <div class="ip:pl-6 lg:pl-0 ip:mt-8 lg:flex ip:w-full">
+       <div class=" lg:w-96 mb-1 mt-2 lg:mt-3 ">
     <Multiselect
       v-model="state"
       placeholder="Selecione um estado"
@@ -431,7 +431,7 @@
 -->
 
       <div id="bottom" class="lg: lg:mt-2">
-        <button  @click="getStateList(state); open()" id="botao" class="w-tm rounded mt-0 lg:mt-1 lg:w-14  lg:ml-2 lg:p-2">
+        <button  @click="getStateList(state); open()" id="botao" class="w-tm rounded mt-0 lg:mt-1 lg:w-14  lg:ml-2 lg:p-2 ip:w-bt ip:px-14">
         <img id="lupa" class="w-10 my-1 ml-32 py-0 lg:ml-1 lg:w-8 " src="../images/lupa.png" alt="" />  
         </button>
         
@@ -486,7 +486,7 @@
       <div class="modal__content mb-96">
         <div id="list" class="">
           <ul id="myUL">
-           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="item in municipios || item in indice" :key="item.id">
+           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="item in municipios" :key="item.id">
               {{ item }}
             </li> </a>
           </ul>
@@ -626,7 +626,7 @@ export default {
 
       });
 
-      console.log(indice);
+      console.log(municipios.item);
 
       console.log(municipios);
       
@@ -832,7 +832,7 @@ svg path:hover {
 /* MODAL */
 
 #teste{
-  margin-right: -70px;
+  margin-right: -50px;
   margin-top: 10px;
   
   
