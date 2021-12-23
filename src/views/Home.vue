@@ -1,11 +1,11 @@
 <template>
-  <section class="flex bg-cover lg:w-screen h-screen flex-col lg:h-screen" id="background">
+  <section class="flex bg-cover lg:w-screen h-screen flex-col lg:h-screen " id="background">
     <br />
     <header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-1 pt-1 lg:w-11/12 lg:ml-16 lg:h-12 pp:ml-7 ip:ml-16  ">
       <h3  id="texto-header" class="text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
     </header>
 
-    <Preloader class="flex"> </Preloader>
+    <Preloader class="relative"> </Preloader>
 
 <div class="block">
     <section id="interface" class="ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
@@ -396,10 +396,10 @@
 
 
       <div class="mt-ot center  mr-3 md:ml-5 md:mt-ot absolute pt-0 lg:mt-52 lg:ml-es ip:mt-al">
-        <p class="ml-10 hidden lg:grid lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 " id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
+        <p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
-       <div class="ip:pl-6 lg:pl-0 ip:mt-8 lg:flex ip:w-full">
-       <div class=" lg:w-96 mb-1 mt-2 lg:mt-3 ">
+       <div class="ip:pl-6 lg:pl-0 ip:mt-8 lg:mt-0 lg:flex ip:w-full fixed">
+       <div class=" lg:w-96 ip:w-bt lg:relative  mb-1 mt-2 lg:mt-3 ">
     <Multiselect
       v-model="state"
       placeholder="Selecione um estado"
