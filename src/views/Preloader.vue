@@ -50,7 +50,7 @@ import { onMounted, ref } from 'vue';
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     z-index: 3;
     top: 0;
     left: 0;

@@ -1,11 +1,11 @@
 <template>
-  <section class="flex bg-cover lg:w-screen h-screen flex-col" id="background">
+  <section class="flex bg-cover lg:w-screen h-screen flex-col lg:h-screen" id="background">
     <br />
     <header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-1 pt-1 lg:w-11/12 lg:ml-16 lg:h-12 pp:ml-7 ip:ml-16  ">
       <h3  id="texto-header" class="text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
     </header>
 
-    <Preloader class="relative"> </Preloader>
+    <Preloader class="flex"> </Preloader>
 
 <div class="block">
     <section id="interface" class="ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
@@ -417,7 +417,7 @@
         
 
 }"
-      class="py-3"
+      class="py-3 "
       
     />
   </div>
