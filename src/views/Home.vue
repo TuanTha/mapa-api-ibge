@@ -13,15 +13,14 @@
 <div class="block">
     <section class="interface ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
       <div id="imagens" >
-        <div id="icons" class="hidden lg:w-7/12 lg:flex">
+        <div id="icons" class="hidden lg:w-6/12 lg:ml-10 lg:mt-9 lg:flex">
           <img class="mt- mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
    
-        <div id="mapa" class="fixed mr-5 mt-2 lg:pt-12 lg:ml-6 lg:pl-10 md:ml-5">
+        <div class="fixed mr-5 mt-2 lg:pt-12 lg:ml-6 lg:pl-10 md:ml-5">
           <svg
-            id="brasil"
-            class="w-72 mt-4 lg:w-mp ip:w-tg "
+            class="w-64 mt-4 lg:w-mp ip:w-tg "
             viewBox="0 0 869 864"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -446,111 +445,7 @@
 
       </div>
 
-
-       <div>
-    <vue-final-modal
-      id="Mood"
-      v-model="showModal"
-      classes="modal-container"
-      content-class="modal-content"
-      @click-outside="ClearData()"
-    >
-      <button class="modal__close" @click="ClearData(); showModal = false">
-        <mdi-close
-          >
-          <div class="w-auto h-auto mt-3 mr-3 "><img class="" style="width: 10px"  src="../images/X.png" alt=""
-        ></div></mdi-close>
-      </button>
-
-<div id="teste" class="flex">
-       <Multiselect
-      placeholder="Selecione uma cidade"
-      v-model="state"
-      v-on:keyup.enter="open()"
-      @select="showModal2 = true"
-      :closeOnSelect="true"
-      :searchable="true"
-      :options="municipios"
-      :option-height="50"
-      :classes="{ 
-        optionSelected: 'text-white bg-green-700',
-        containerActive: 'ring ring-green-900 ring-opacity-10',
-
-  
-}"
       
-      
-    />
-
-    </div> 
-
-      <div class="modal__content mb-96">
-        <div id="list" class="">
-          <ul id="myUL">
-           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="item in municipios" :key="item.id">
-              {{ item }}
-            </li> </a>
-          </ul>
-        </div>
-        </div>
-      
-    </vue-final-modal>
-  </div>
-
-  <!-- MODAL DE RESULTADO -->
-
-  <div>
-
-    <vue-final-modal
-      v-model="showModal2"
-      classes="modal-container"
-      content-class="modal-content"
-    >
-     <!-- <button class="modal__close" @click="showModal2 = false">
-        <mdi-close
-          ><img style="width: 10px" src="../images/X.png" alt=""
-        ></mdi-close>
-      </button> -->
-      <div>
-      <div class="modal__content">
-      <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> Indicadores </h5></nav>
-      <section class="mt-24 mr-5 ml-5   lg:ml-5 lg:mr-5 lg:mt-32">
-      <table>
-  <tr>
-    <td class="flex"><img src="../images/habitantes.svg" class="w-10 mr-2" alt="">Habitantes</td>
-    <td>1589</td>
-  </tr>
-  <tr>
-    <td class="flex"><img src="../images/ativos.svg" class="w-7 mr-5" alt=""> Clientes Ativos</td>
-    <td>200</td>
-  </tr>
-  <tr>
-    <td class="flex"><img src="../images/market.svg" class="w-7 mr-5" alt="">Market Share</td>
-    <td>50%</td>
-  </tr>
-  <tr>
-    <td class="flex"><img src="../images/pin.svg" class="w-5 mr-7" alt="">Penetração</td>
-    <td>20%</td>
-  </tr>
-  <tr>
-    <td class="flex"><img src="../images/churn.svg" class="w-6 mr-6" alt="">Churn</td>
-    <td>2%</td>
-  </tr>
-</table>
-</section>
-
-<a class="pointer" @click="showModal2=false" >
-<img  src="../images/voltar2.svg" class="w-14 mt-14 ml-80 absolute" alt="">
-<img id="efeito"  src="../images/voltar.svg" class="w-14 mt-14 ml-80 relative" alt="">
-
-
-</a>
-      </div>
-      </div>
-    </vue-final-modal>
-  </div>
-
-  <!-- FIM DO MODAL DE RESULTADO -->
 
 
 
