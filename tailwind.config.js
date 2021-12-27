@@ -13,7 +13,7 @@ module.exports = {
 
       ip: '768px',
 
-      lg: '1366px'
+      lg: '1000px'
 
       // => @media (min-width: 1440px) { ... }
 

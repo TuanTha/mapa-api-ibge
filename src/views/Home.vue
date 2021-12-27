@@ -3,24 +3,26 @@
 <Preloader class="relative"> </Preloader>
 
  <div class="common-layout">
-    <el-container >
-      <el-header id="header" class="bg-white rounded  mx-5 mt-4 justify-items-center h">
-      <h3  class="texto-header lg:text-2xl lg:mt-3"><b>BUSQUE POR UM ESTADO</b></h3>
+    <el-container class="relative">
+      <el-header id="header" class="bg-white rounded  mx-4 mt-4 justify-items-center h">
+      <h3  class="texto-header lg:text-2xl lg:mt-3 sm:mt-1 md:mt-3"><b>BUSQUE POR UM ESTADO</b></h3>
       </el-header>  
     </el-container>
 </div>
 
-<div class="block">
+
+
+<div class="block ml-2">
     <section class="interface ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
       <div id="imagens" >
-        <div id="icons" class="hidden lg:w-6/12 lg:ml-10 lg:mt-9 lg:flex">
-          <img class="mt- mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
+        <div id="icons" class="hidden lg:w-6/12 lg:ml-10 lg:mt-6 lg:flex">
+          <img class="mt-2 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
    
-        <div class="fixed mr-5 mt-2 lg:pt-12 lg:ml-6 lg:pl-10 md:ml-5">
+        <div class="fixed mr-5 mt-1 lg:pt-12 lg:ml-6 lg:pl-10 md:ml-5">
           <svg
-            class="w-64 mt-4 lg:w-mp ip:w-tg "
+            class="w-72 mt-4 ml-0 lg:w-mp ip:w-tg"
             viewBox="0 0 869 864"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -403,7 +405,7 @@
       <div class="ml-10 mt-at md:mt-at md:ml-16 pp:ml-5 sm:ml-12 absolute pt-0 lg:mt-64 lg:ml-es ip:mt-al">
         <p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
-       <div class="ip:pl-6 lg:pl-0 ip:mt-8 lg:mt-0 lg:flex ip:w-full fixed">
+       <div class="ip:pl-6 lg:pl-0 ip:mt-10 lg:mt-0 lg:flex ip:w-full fixed ip:ml-20 lg:ml-0">
        <div class=" lg:w-96 ip:w-bt lg:relative  mb-1 mt-2 lg:mt-3 ">
     <Multiselect
       v-model="state"
@@ -445,11 +447,112 @@
 
       </div>
 
-      
-
-
-
 </section>
+
+ <div>
+    <vue-final-modal
+      id="Mood"
+      v-model="showModal"
+      classes="modal-container"
+      content-class="modal-content"
+      @click-outside="ClearData()"
+    >
+      <button class="modal__close" @click="ClearData(); showModal = false">
+        <mdi-close
+          >
+          <div class="w-auto h-auto mt-3 mr-3 "><img class="" style="width: 10px"  src="../images/X.png" alt=""
+        ></div></mdi-close>
+      </button>
+
+<div id="teste" class="flex">
+       <Multiselect
+      placeholder="Selecione uma cidade"
+      v-model="state"
+      v-on:keyup.enter="open()"
+      @select="showModal2 = true"
+      :closeOnSelect="true"
+      :searchable="true"
+      :options="municipios"
+      :option-height="50"
+      :classes="{ 
+        optionSelected: 'text-white bg-green-700',
+        containerActive: 'ring ring-green-900 ring-opacity-10',
+
+  
+}"
+      
+      
+    />
+
+    </div> 
+
+      <div class="modal__content mb-96">
+        <div id="list" class="">
+          <ul id="myUL">
+           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="item in municipios" :key="item.id">
+              {{ item }}
+            </li> </a>
+          </ul>
+        </div>
+        </div>
+      
+    </vue-final-modal>
+  </div>
+
+  <!-- MODAL DE RESULTADO -->
+
+  <div>
+
+    <vue-final-modal
+      v-model="showModal2"
+      classes="modal-container"
+      content-class="modal-content"
+    >
+     <!-- <button class="modal__close" @click="showModal2 = false">
+        <mdi-close
+          ><img style="width: 10px" src="../images/X.png" alt=""
+        ></mdi-close>
+      </button> -->
+      <div>
+      <div class="modal__content">
+      <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> Indicadores </h5></nav>
+      <section class="mt-24 mr-5 ml-5   lg:ml-5 lg:mr-5 lg:mt-32">
+      <table>
+  <tr>
+    <td class="flex"><img src="../images/habitantes.svg" class="w-10 mr-2" alt="">Habitantes</td>
+    <td>1589</td>
+  </tr>
+  <tr>
+    <td class="flex"><img src="../images/ativos.svg" class="w-7 mr-5" alt=""> Clientes Ativos</td>
+    <td>200</td>
+  </tr>
+  <tr>
+    <td class="flex"><img src="../images/market.svg" class="w-7 mr-5" alt="">Market Share</td>
+    <td>50%</td>
+  </tr>
+  <tr>
+    <td class="flex"><img src="../images/pin.svg" class="w-5 mr-7" alt="">Penetração</td>
+    <td>20%</td>
+  </tr>
+  <tr>
+    <td class="flex"><img src="../images/churn.svg" class="w-6 mr-6" alt="">Churn</td>
+    <td>2%</td>
+  </tr>
+</table>
+</section>
+
+<a class="pointer" @click="showModal2=false" >
+<img  src="../images/voltar2.svg" class="w-14 mt-14 ml-80 absolute" alt="">
+<img id="efeito"  src="../images/voltar.svg" class="w-14 mt-14 ml-80 relative" alt="">
+
+
+</a>
+      </div>
+      </div>
+    </vue-final-modal>
+  </div>
+
+  <!-- FIM DO MODAL DE RESULTADO -->
 </template>
 
 <script>
