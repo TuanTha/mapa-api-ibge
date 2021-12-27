@@ -15,12 +15,12 @@
 <div class="block ml-2">
     <section class="interface ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
       <div id="imagens" >
-        <div id="icons" class="hidden lg:w-6/12 lg:ml-10 lg:mt-6 lg:flex">
+        <div id="icons" class="hidden lg:w-6/12 lg:ml-10 lg:mt-2 lg:flex">
           <img class="mt-2 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
    
-        <div class="fixed mr-5 mt-1 lg:pt-12 lg:ml-6 lg:pl-10 md:ml-5">
+        <div class="fixed mr-5 mt-1 lg:pt-4 lg:ml-6 lg:pl-10 md:ml-5">
           <svg
             class="w-72 mt-4 ml-0 lg:w-mp ip:w-tg"
             viewBox="0 0 869 864"
@@ -787,7 +787,6 @@ color: #0E959A
 
 #imagens {
   display: flex;
-  flex-direction: row;
 }
 
 
