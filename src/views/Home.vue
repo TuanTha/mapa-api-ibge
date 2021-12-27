@@ -13,10 +13,10 @@
     </div>
 <!-- FIM DO HEADER -->
 
-<div class="space-x-4 flex">
+<div class="space-x-4 flex ml-12">
 
     <!-- IMAGENS (ilustrações) -->
-      <div class="border-4 h-auto w-full mt-2 relative">
+      <div class=" h-auto w-full mt-2 relative">
 
        <div class="ml-10 lg:w-11/12 absolute">
           <img class="mt-4 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
@@ -406,9 +406,10 @@
 
 
 
-<div class="border-4 h-auto w-full mt-2">  
-<p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b>
-</p>
+<div class=" h-auto w-full mt-2">  
+
+<div class="mt-52">
+<p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
        <div class="ip:pl-6 lg:pl-0 ip:mt-10 lg:mt-0 lg:flex ip:w-full fixed ip:ml-20 lg:ml-0">
        <div class=" lg:w-96 ip:w-bt lg:relative  mb-1 mt-2 lg:mt-3 ">
@@ -440,7 +441,14 @@
         </button>
         
       </div>
-</div> </div>
+</div> 
+</div>
+
+
+</div>
+
+
+
 </div>
 
 </section>
