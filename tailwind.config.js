@@ -16,13 +16,21 @@ module.exports = {
       lg: '1366px'
 
       // => @media (min-width: 1440px) { ... }
+
+      // CELULAR NA HORIZONTAL
+
+      //MOTO G
+
+      //PIXEL
+
+      //PIXEL 2
     },
 
     extend: {
       margin: {
         ot: '350px',
-        at: '415px',
-        al: '550px',
+        at: '440px',
+        al: '590px',
         es: '800px',
         qu: '30px',
         ma: '338px'

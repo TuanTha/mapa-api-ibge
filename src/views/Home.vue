@@ -1,21 +1,24 @@
-<template>
-  <section class="flex bg-cover lg:w-screen h-screen flex-col lg:h-screen " id="background">
-    <br />
-    <header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-1 pt-1 lg:w-11/12 lg:ml-16 lg:h-12 pp:ml-7 ip:ml-16  ">
-      <h3  id="texto-header" class="text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
-    </header>
+<template >
+<section class="flex bg-cover lg:w-screen h-screen flex-col lg:h-screen background">
+<Preloader class="relative"> </Preloader>
 
-    <Preloader class="relative"> </Preloader>
+ <div class="common-layout">
+    <el-container >
+      <el-header id="header" class="bg-white rounded  mx-5 mt-4 justify-items-center h">
+      <h3  class="texto-header lg:text-2xl lg:mt-3"><b>BUSQUE POR UM ESTADO</b></h3>
+      </el-header>  
+    </el-container>
+</div>
 
 <div class="block">
-    <section id="interface" class="ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
+    <section class="interface ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
       <div id="imagens" >
         <div id="icons" class="hidden lg:w-7/12 lg:flex">
-          <img class="mt-2 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
+          <img class="mt- mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
    
-        <div id="mapa" class="absolute mr-5 mt-2 lg:pt-12 lg:ml-6 lg:pl-10 md:ml-5">
+        <div id="mapa" class="fixed mr-5 mt-2 lg:pt-12 lg:ml-6 lg:pl-10 md:ml-5">
           <svg
             id="brasil"
             class="w-72 mt-4 lg:w-mp ip:w-tg "
@@ -393,9 +396,12 @@
           </svg>
         </div>
       </div>
+      </section>
+      </div>
 
+<!-- BARRA DE BUSCA --> 
 
-      <div class="mt-ot center  mr-3 md:ml-5 md:mt-ot absolute pt-0 lg:mt-52 lg:ml-es ip:mt-al">
+      <div class="ml-10 mt-at md:mt-at md:ml-16 pp:ml-5 sm:ml-12 absolute pt-0 lg:mt-64 lg:ml-es ip:mt-al">
         <p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
        <div class="ip:pl-6 lg:pl-0 ip:mt-8 lg:mt-0 lg:flex ip:w-full fixed">
@@ -440,13 +446,8 @@
 
       </div>
 
-     
-      
-    </section>
-    </div>
-  </section>
 
-  <div>
+       <div>
     <vue-final-modal
       id="Mood"
       v-model="showModal"
@@ -550,7 +551,10 @@
   </div>
 
   <!-- FIM DO MODAL DE RESULTADO -->
-  
+
+
+
+</section>
 </template>
 
 <script>
@@ -768,9 +772,8 @@ text-decoration: none
 }
 
 
-#background {
+.background {
   background-image: url(../images/FUNDO.png);
-
   background-repeat: no-repeat;
 }
 
@@ -779,9 +782,8 @@ text-decoration: none
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-#texto-header {
+.texto-header {
 color: #0E959A
- 
 }
 
 
@@ -795,7 +797,7 @@ color: #0E959A
   position: relative;
 }
 
-#interface {
+.interface {
   display: flex;
   flex-direction: row;
 }
@@ -925,5 +927,42 @@ svg path:hover {
 #efeito:hover{
 display: none;
 transition: 1s;
+}
+
+
+
+.el-header,
+.el-footer {
+  background-color: #b3c0d1;
+  color: var(--el-text-color-primary);
+  text-align: center;
+  line-height: 60px;
+}
+
+.el-aside {
+  background-color: #d3dce6;
+  color: var(--el-text-color-primary);
+  text-align: center;
+  line-height: 200px;
+}
+
+.el-main {
+  background-color: #e9eef3;
+  color: var(--el-text-color-primary);
+  text-align: center;
+  line-height: 160px;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
 }
 </style>
