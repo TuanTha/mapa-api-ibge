@@ -1,28 +1,30 @@
 <template >
 <section class="flex bg-cover lg:w-screen h-screen flex-col lg:h-screen background">
+
+<!-- PRELOADER -->
 <Preloader class="relative"> </Preloader>
+<!-- FIM DO PRELOADER -->
 
- <div class="common-layout">
-    <el-container class="relative">
-      <el-header id="header" class="bg-white rounded  mx-4 mt-4 justify-items-center h">
-      <h3  class="texto-header lg:text-2xl lg:mt-3 sm:mt-1 md:mt-3"><b>BUSQUE POR UM ESTADO</b></h3>
-      </el-header>  
-    </el-container>
-</div>
+<!-- HEADER -->
+<div class="w-full"> 
+<header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-4 pt-1 lg:w-11/12 lg:ml-16 lg:h-12 pp:ml-7 ip:ml-16  ">
+      <h3 class="texto-header text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
+    </header>
+    </div>
+<!-- FIM DO HEADER -->
 
+<div class="space-x-4 flex">
 
+    <!-- IMAGENS (ilustrações) -->
+      <div class="border-4 h-auto w-full mt-2 relative">
 
-<div class="block ml-2">
-    <section class="interface ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
-      <div id="imagens" >
-        <div id="icons" class="hidden lg:w-6/12 lg:ml-10 lg:mt-2 lg:flex">
-          <img class="mt-2 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
+       <div class="ml-10 lg:w-11/12 absolute">
+          <img class="mt-4 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
-   
-        <div class="fixed mr-5 mt-1 lg:pt-4 lg:ml-6 lg:pl-10 md:ml-5">
+        <div class="relative">
           <svg
-            class="w-72 mt-4 ml-0 lg:w-mp ip:w-tg"
+            class="w-mp mt-20 ml-20"
             viewBox="0 0 869 864"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -397,16 +399,21 @@
           </svg>
         </div>
       </div>
-      </section>
-      </div>
+      <!-- FIM DAS IMAGENS (ilustrações) -->
 
-<!-- BARRA DE BUSCA --> 
 
-      <div class="ml-10 mt-at md:mt-at md:ml-16 pp:ml-5 sm:ml-12 absolute pt-0 lg:mt-64 lg:ml-es ip:mt-al">
-        <p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
+
+
+
+
+<div class="border-4 h-auto w-full mt-2">  
+<p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b>
+</p>
 
        <div class="ip:pl-6 lg:pl-0 ip:mt-10 lg:mt-0 lg:flex ip:w-full fixed ip:ml-20 lg:ml-0">
        <div class=" lg:w-96 ip:w-bt lg:relative  mb-1 mt-2 lg:mt-3 ">
+
+
     <Multiselect
       v-model="state"
       placeholder="Selecione um estado"
@@ -419,33 +426,22 @@
       openDirection="top"
       :classes="{
         containerActive: 'ring ring-green-900 ring-opacity-10',
-        container: 'relative mx-auto w-full flex items-center justify-end box-border cursor-pointer border border-gray-300 rounded bg-white text-base leading-snug outline-none',
-      
-        
-
-}"
+        container: 'relative mx-auto w-full flex items-center justify-end box-border cursor-pointer border border-gray-300 rounded bg-white text-base leading-snug outline-none'}"
       class="py-3 "
-      
     />
   </div>
-
-
-
-
        <!--
         <input onfocus="this.value=''"  v-on:keyup.enter="showModal = true; getStateList(state)" type="text" placeholder="DIGITE A UF" id="place" class=" w-max px-5 text-center py-2 lg:py-6 lg:w-96 lg:text-left lg:h-14"  
         v-model="state">
 -->
-
       <div id="bottom" class="lg: lg:mt-2">
         <button  @click="getStateList(state); open()" id="botao" class="w-tm rounded mt-0 lg:mt-1 lg:w-14  lg:ml-2 lg:p-2 ip:w-bt ip:px-14">
         <img id="lupa" class="w-10 my-1 ml-32 py-0 lg:ml-1 lg:w-8 " src="../images/lupa.png" alt="" />  
         </button>
         
       </div>
+</div> </div>
 </div>
-
-      </div>
 
 </section>
 
@@ -784,15 +780,6 @@ text-decoration: none
 color: #0E959A
 }
 
-
-#imagens {
-  display: flex;
-}
-
-
-#icons {
-  position: relative;
-}
 
 .interface {
   display: flex;
