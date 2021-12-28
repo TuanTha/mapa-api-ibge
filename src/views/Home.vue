@@ -467,33 +467,19 @@
         ></div></mdi-close>
       </button>
 
-<div id="teste" class="flex">
-       <Multiselect
-      placeholder="Selecione uma cidade"
-      v-model="state"
-      v-on:keyup.enter="open()"
-      @select="showModal2 = true"
-      :closeOnSelect="true"
-      :searchable="true"
-      :options="municipios"
-      :option-height="50"
-      :classes="{ 
-        optionSelected: 'text-white bg-green-700',
-        containerActive: 'ring ring-green-900 ring-opacity-10',
+<div id="teste">
 
-  
-}"
-      
-      
-    />
-
+            <input v-model="filterText" type="text" class="py-2 pl-8 pr-2 rounded w-64 bg-gray-100 focus:bg-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="Busque" />
+            <svg class="focus:hidden ml-20 w-4 h-5 absolute top-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path id="lupa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>  
     </div> 
 
       <div class="modal__content mb-96">
         <div id="list" class="">
           <ul id="myUL">
-           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="item in municipios" :key="item.id">
-              {{ item }}
+           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="muni in filteredMuni" :key="muni.id">
+              {{ muni }}
             </li> </a>
           </ul>
         </div>
@@ -584,8 +570,15 @@ export default {
     const municipios = reactive([]);
     const state = reactive([]);
     const estados = reactive([]);
-    const search = reactive([]);
+    const filterText = ref('');
     const indice = reactive([]);
+    const filteredMuni = computed( () => {
+			let filter = filterText.value
+			if (!filter.length) return municipios
+			return municipios.filter( muni => 
+				muni.toLowerCase().includes(filter.toLowerCase())
+			)
+		});
 
 
      function getStateList(uf) {
@@ -672,7 +665,9 @@ export default {
       state,
       ClearData,
       open,
-      indice
+      indice,
+      filterText,
+      filteredMuni
       
       
   
@@ -831,21 +826,26 @@ svg path:hover {
   transition: 0.3s;
 }
 
+
 /* MODAL */
 
+
+#teste path:hover{
+  fill: white;
+  
+  
+}
+
+
 #teste{
-  margin-right: -50px;
-  margin-top: 10px;
+margin-top: 15px;
   
   
 }
 
 #teste div{
   margin-top: 5px;
-  height: auto !important;
-  width: 320px !important;
   position: absolute !important; 
-  border-radius: 3px ;
   box-shadow: none !important;
   
 }
@@ -929,40 +929,4 @@ display: none;
 transition: 1s;
 }
 
-
-
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-aside {
-  background-color: #d3dce6;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 200px;
-}
-
-.el-main {
-  background-color: #e9eef3;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 160px;
-}
-
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
-}
 </style>
