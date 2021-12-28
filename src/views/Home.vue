@@ -1,5 +1,5 @@
 <template >
-<section class="flex bg-cover lg:w-screen h-screen flex-col lg:h-screen background">
+<section class="flex fixed bg-cover min-h-full min-w-full lg:w-auto h-auto flex-col background">
 
 <!-- PRELOADER -->
 <Preloader class="relative"> </Preloader>
@@ -7,24 +7,28 @@
 
 <!-- HEADER -->
 <div class="w-full"> 
-<header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-4 pt-1 lg:w-11/12 lg:ml-16 lg:h-12 pp:ml-7 ip:ml-16  ">
+<header id="header" class="bg-white w-10/12 h-10 rounded text-center ml-10 mt-4 pt-1 lg:w-11/12 lg:ml-14 lg:h-12 pp:ml-7 ip:ml-16  ">
       <h3 class="texto-header text-xl font-sans lg:text-2xl"><b>BUSQUE POR UM ESTADO</b></h3>
     </header>
     </div>
 <!-- FIM DO HEADER -->
 
-<div class="space-x-4 flex ml-12">
 
+<!-- BARRA DE BUSCA --> 
+
+
+<!-- IMAGENS (div geral) -->
+    <div class="interface ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
     <!-- IMAGENS (ilustrações) -->
-      <div class=" h-auto w-full mt-2 relative">
-
-       <div class="ml-10 lg:w-11/12 absolute">
-          <img class="mt-4 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
+      <div id="imagens" >
+        <div id="icons" class="hidden lg:w-6/12 lg:ml-10 lg:mt-2 lg:flex">
+          <img class="mt-2 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
-        <div class="relative">
+   
+        <div class="fixed mr-5 mt-1 lg:pt-4 lg:ml-6 lg:pl-10 md:ml-5">
           <svg
-            class="w-mp mt-20 ml-20"
+            class="w-72 mt-4 ml-0 lg:w-mp ip:w-tg"
             viewBox="0 0 869 864"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -400,16 +404,15 @@
         </div>
       </div>
       <!-- FIM DAS IMAGENS (ilustrações) -->
+      </div>
+<!-- FIM DAS IMAGENS (div geral) -->
 
 
+<!-- BARRA DE BUSCA --> 
+      <div class="ml-10 mt-at md:mt-at md:ml-16 pp:ml-5 sm:ml-12 absolute pt-0 lg:mt-64 lg:ml-es ip:mt-al">
 
 
-
-
-<div class=" h-auto w-full mt-2">  
-
-<div class="mt-52">
-<p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
+      <p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
        <div class="ip:pl-6 lg:pl-0 ip:mt-10 lg:mt-0 lg:flex ip:w-full fixed ip:ml-20 lg:ml-0">
        <div class=" lg:w-96 ip:w-bt lg:relative  mb-1 mt-2 lg:mt-3 ">
@@ -441,15 +444,11 @@
         </button>
         
       </div>
-</div> 
 </div>
 
+      </div>
+<!-- BARRA DE BUSCA FIM --> 
 
-</div>
-
-
-
-</div>
 
 </section>
 
@@ -788,6 +787,15 @@ text-decoration: none
 color: #0E959A
 }
 
+
+#imagens {
+  display: flex;
+}
+
+
+#icons {
+  position: relative;
+}
 
 .interface {
   display: flex;
