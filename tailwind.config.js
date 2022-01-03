@@ -13,7 +13,9 @@ module.exports = {
 
       ip: '768px',
 
-      lg: '1000px'
+      lg: '1000px',
+
+      xl: '1920px'
 
       // => @media (min-width: 1440px) { ... }
 
@@ -33,7 +35,8 @@ module.exports = {
         al: '590px',
         es: '800px',
         qu: '30px',
-        ma: '338px'
+        ma: '338px',
+        gd: '900px'
       },
 
       width: {
@@ -41,12 +44,17 @@ module.exports = {
         mp: '500px',
         bt: '54px',
         tg: '505px',
-        bt: '440px'
+        bt: '440px',
+        gd: '700px'
       },
 
       height: {
         bt: '52px',
         an: '560px'
+      },
+
+      colors: {
+        'verde-lodo': '#0a686c'
       }
     }
   },

@@ -18,23 +18,23 @@
 
 
 <!-- IMAGENS (div geral) -->
-    <div class="interface ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32" >
+    <div class="interface  lg:mt-5 ml-1 lg:ml-12 sm:ml-12 pp:ml-5 ip:ml-32 xl:mt-5">
     <!-- IMAGENS (ilustrações) -->
       <div id="imagens" >
-        <div id="icons" class="hidden lg:w-6/12 lg:ml-10 lg:mt-2 lg:flex">
+        <div id="icons" class="hidden lg:w-6/12 xl:w-7/12  lg:ml-10 lg:mt-2 lg:flex">
           <img class="mt-2 mr-4" src="../images/Ilustrações.png" alt="ilustrações" />
         </div>
 
    
-        <div class="fixed mr-5 mt-1 lg:pt-4 lg:ml-6 lg:pl-10 md:ml-5">
+        <div class="fixed xl:ml-20  xl:pt-16  mr-5 mt-1 lg:pt-4 lg:ml-6 lg:pl-10 md:ml-5">
           <svg
-            class="w-72 mt-4 ml-0 lg:w-mp ip:w-tg"
+            class="w-72 xl:w-es mt-4 ml-0 lg:w-mp ip:w-tg"
             viewBox="0 0 869 864"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <g filter="url(#filter0_d_7:22)">
-              <a xlink:title="SC" class="pointer" @click="getStateList('SC'); showModal = true">
+              <a xlink:title="RS" class="pointer" @click="getStateList('RS'); showModal = true">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -409,13 +409,13 @@
 
 
 <!-- BARRA DE BUSCA --> 
-      <div class="ml-10 mt-at md:mt-at md:ml-16 pp:ml-5 sm:ml-12 absolute pt-0 lg:mt-64 lg:ml-es ip:mt-al">
+      <div class=" xl:ml-gd ml-10 mt-at md:mt-at md:ml-16 pp:ml-5 sm:ml-12 absolute pt-0 lg:mt-64 lg:ml-es ip:mt-al">
 
 
-      <p class="ml-10 hidden lg:flex lg:text-left text-lg pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
+      <p class="ml-10 hidden lg:flex lg:text-left text-lg xl:text-2xl pt-2 lg:pt-4 lg:text-2xl lg:ml-0 lg:" id="texto-interface"><b>DIGITE O NOME DA UF</b></p>
 
-       <div class="ip:pl-6 lg:pl-0 ip:mt-10 lg:mt-0 lg:flex ip:w-full fixed ip:ml-20 lg:ml-0">
-       <div class=" lg:w-96 ip:w-bt lg:relative  mb-1 mt-2 lg:mt-3 ">
+       <div class="ip:pl-6 lg:pl-0 ip:mt-10 lg:mt-0 lg:flex ip:w-full fixed ip:ml-20 lg:ml-0 ">
+       <div class=" lg:w-96 ip:w-bt lg:relative  mb-1 mt-2 lg:mt-3 xl:w-mp ">
 
 
     <Multiselect
@@ -458,18 +458,15 @@
       v-model="showModal"
       classes="modal-container"
       content-class="modal-content"
-      @click-outside="ClearData()"
+      @click-outside="ClearData(); clearInput();"
     >
-      <button class="modal__close" @click="ClearData(); showModal = false">
-        <mdi-close
-          >
-          <div class="w-auto h-auto mt-3 mr-3 "><img class="" style="width: 10px"  src="../images/X.png" alt=""
-        ></div></mdi-close>
+      <button class="modal__close" @click="ClearData(); showModal = false; clearInput()">
+
       </button>
 
 <div id="teste">
 
-            <input v-model="filterText" type="text" class="py-2 pl-8 pr-2 rounded w-64 bg-gray-100 focus:bg-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="Busque" />
+            <input v-model="filterText" onfocus="this.value=''" type="text" class="py-2 pl-8 pr-2 rounded w-64 bg-gray-100 focus:bg-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="Busque" />
             <svg class="focus:hidden ml-20 w-4 h-5 absolute top-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path id="lupa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>  
@@ -478,8 +475,8 @@
       <div class="modal__content mb-96">
         <div id="list" class="">
           <ul id="myUL">
-           <a class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="muni in filteredMuni" :key="muni.id">
-              {{ muni }}
+           <a  class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="(muni, index) in filteredMuni" :key="muni.id" @click="nomeCidade(index)">
+              {{ muni.city_name }} 
             </li> </a>
           </ul>
         </div>
@@ -504,12 +501,17 @@
       </button> -->
       <div>
       <div class="modal__content">
-      <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> Indicadores </h5></nav>
+      <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> {{ cidade }} </h5></nav>
+      
       <section class="mt-24 mr-5 ml-5   lg:ml-5 lg:mr-5 lg:mt-32">
+      
       <table>
+
+
+      
   <tr>
     <td class="flex"><img src="../images/habitantes.svg" class="w-10 mr-2" alt="">Habitantes</td>
-    <td>1589</td>
+    <td>1589</td>  
   </tr>
   <tr>
     <td class="flex"><img src="../images/ativos.svg" class="w-7 mr-5" alt=""> Clientes Ativos</td>
@@ -527,6 +529,7 @@
     <td class="flex"><img src="../images/churn.svg" class="w-6 mr-6" alt="">Churn</td>
     <td>2%</td>
   </tr>
+  
 </table>
 </section>
 
@@ -565,6 +568,7 @@ export default {
     });
 
     //ABRIR MODAL//
+    const cidade = reactive([]);
     const showModal = ref(false);
     const showModal2 = ref(false);
     const municipios = reactive([]);
@@ -576,9 +580,17 @@ export default {
 			let filter = filterText.value
 			if (!filter.length) return municipios
 			return municipios.filter( muni => 
-				muni.toLowerCase().includes(filter.toLowerCase())
+				muni.city_name.toLowerCase().includes(filter.toLowerCase())
 			)
 		});
+
+    function nomeCidade(index) {
+        const title = filteredMuni.value[index].city_name;
+        console.log(title);
+        cidade.splice(0, 1, title)
+        
+        
+    }
 
 
      function getStateList(uf) {
@@ -598,9 +610,12 @@ export default {
        showModal.value = true;
      }
     }
+
+    function clearInput(){
+      filterText.value = "";
+    }
+
     
-
-
     function HandleModal() {
       showModal.value = true;
       showModal2.value = true;
@@ -615,8 +630,7 @@ export default {
       console.log()
     
       data.forEach((item) => {
-        municipios.push(item.nome);
-        indice.push(item.id);
+       municipios.push({ city_name: item.nome, city_id: item.id });
         
         
         
@@ -643,15 +657,7 @@ export default {
       console.log(municipios);
     };
 
-    if(/Android [4-6]/.test(navigator.appVersion)) {
-   window.addEventListener("resize", function() {
-      if(document.activeElement.tagName=="INPUT" || document.activeElement.tagName=="TEXTAREA") {
-         window.setTimeout(function() {
-            document.activeElement.scrollIntoViewIfNeeded();
-         },0);
-      }
-   })
-}
+    
 
     return {
       showModal,
@@ -667,7 +673,10 @@ export default {
       open,
       indice,
       filterText,
-      filteredMuni
+      filteredMuni,
+      clearInput,
+      nomeCidade,
+      cidade,
       
       
   
@@ -702,7 +711,7 @@ padding-top: 2px;
 
 
 table {
-  font-family: arial, sans-serif;
+  font-family: Roboto-Bold, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
