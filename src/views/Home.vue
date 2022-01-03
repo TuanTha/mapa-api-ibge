@@ -460,8 +460,8 @@
       content-class="modal-content"
       @click-outside="ClearData(); clearInput();"
     >
-      <button class="modal__close" @click="ClearData(); showModal = false; clearInput()">
-
+      <button  class="modal__close mt-2" @click="ClearData(); showModal = false; clearInput()">
+<h8 class="mr-4  relative ">X</h8>
       </button>
 
 <div id="teste">
@@ -568,7 +568,7 @@ export default {
     });
 
     //ABRIR MODAL//
-    const cidade = reactive([]);
+    const cidade = ref('');
     const showModal = ref(false);
     const showModal2 = ref(false);
     const municipios = reactive([]);
@@ -584,13 +584,12 @@ export default {
 			)
 		});
 
-    function nomeCidade(index) {
-        const title = filteredMuni.value[index].city_name;
-        console.log(title);
-        cidade.splice(0, 1, title)
-        
-        
+
+    const nomeCidade = (index) => {
+      const title = filteredMuni.value[index].city_name;
+      cidade.value = title
     }
+
 
 
      function getStateList(uf) {
