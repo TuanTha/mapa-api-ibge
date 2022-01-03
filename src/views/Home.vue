@@ -426,7 +426,9 @@
       :closeOnSelect="true"
       :searchable="true"
       :options="estados"
-      :option-height="50"
+      :track-by="'state_name'"
+      label="state_name"
+      value-prop="state_abbr"
       openDirection="top"
       :classes="{
         containerActive: 'ring ring-green-900 ring-opacity-10',
@@ -461,7 +463,7 @@
       @click-outside="ClearData(); clearInput();"
     >
       <button  class="modal__close mt-2" @click="ClearData(); showModal = false; clearInput()">
-<h8 class="mr-4  relative ">X</h8>
+<p class="mr-4">X</p>
       </button>
 
 <div id="teste">
@@ -475,7 +477,7 @@
       <div class="modal__content mb-96">
         <div id="list" class="">
           <ul id="myUL">
-           <a  class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="(muni, index) in filteredMuni" :key="muni.id" @click="nomeCidade(index)">
+           <a  class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="(muni, index) in filteredMuni" :key="muni.id" @click="nomeCidade(index); siglaEstado(index)">
               {{ muni.city_name }} 
             </li> </a>
           </ul>
@@ -501,9 +503,9 @@
       </button> -->
       <div>
       <div class="modal__content">
-      <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> {{ cidade }} </h5></nav>
+      <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> {{ cidade }} / {{ state[0] }} </h5></nav>
       
-      <section class="mt-24 mr-5 ml-5   lg:ml-5 lg:mr-5 lg:mt-32">
+      <section class="mt-24 mr-5 ml-5   lg:ml-5 lg:mr-5 lg:mt-10">
       
       <table>
 
@@ -530,15 +532,16 @@
     <td>2%</td>
   </tr>
   
+  
 </table>
 </section>
 
+<div class="absolute top-96">
 <a class="pointer" @click="showModal2=false" >
 <img  src="../images/voltar2.svg" class="w-14 mt-14 ml-80 absolute" alt="">
 <img id="efeito"  src="../images/voltar.svg" class="w-14 mt-14 ml-80 relative" alt="">
-
-
 </a>
+</div>
       </div>
       </div>
     </vue-final-modal>
@@ -590,6 +593,7 @@ export default {
       cidade.value = title
     }
 
+    
 
 
      function getStateList(uf) {
@@ -650,9 +654,10 @@ export default {
 
     
       data.forEach((item) => {
-        estados.push(item.sigla);
+        estados.push({ state_name: item.nome, state_abbr: item.sigla});
+      
       });
-
+      console.log(estados)
       console.log(municipios);
     };
 
@@ -676,6 +681,7 @@ export default {
       clearInput,
       nomeCidade,
       cidade,
+      
       
       
   
