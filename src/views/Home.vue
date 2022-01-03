@@ -477,7 +477,7 @@
       <div class="modal__content mb-96">
         <div id="list" class="">
           <ul id="myUL">
-           <a  class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="(muni, index) in filteredMuni" :key="muni.id" @click="nomeCidade(index); siglaEstado(index)">
+           <a  class="pointer" @click="showModal2= true;"> <li id="item" class="pl-14" v-for="(muni, index) in filteredMuni" :key="muni.id" @click="nomeCidade(index)">
               {{ muni.city_name }} 
             </li> </a>
           </ul>
@@ -531,7 +531,6 @@
     <td class="flex"><img src="../images/churn.svg" class="w-6 mr-6" alt="">Churn</td>
     <td>2%</td>
   </tr>
-  
   
 </table>
 </section>
