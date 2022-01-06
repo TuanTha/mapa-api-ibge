@@ -379,7 +379,7 @@
 export default {
  emits: ['click'],
  
- setup({emit}) {
+ setup(props, {emit}) {
  const onClick = (value) => {
             emit('click', value)
 }

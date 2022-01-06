@@ -27,7 +27,7 @@
 
    
         <div class="fixed xl:ml-20  xl:pt-16  mr-5 mt-1 lg:pt-4 lg:ml-6 lg:pl-10 md:ml-5">
-         <mapa  @click="getStateList(); showModal=true"></mapa>
+         <mapa  @click="getStateList"></mapa>
         </div>
       </div>
       <!-- FIM DAS IMAGENS (ilustrações) -->
@@ -227,7 +227,8 @@ export default {
      function getStateList(payload) {
       state.shift();
       state.push(payload);
-      showState(payload)
+      showState(payload);
+      showModal.value = true;
     };
 
     function ClearData() {
