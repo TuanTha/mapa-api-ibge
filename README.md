@@ -11,9 +11,9 @@ com a necessidade do usuário.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Screenshot](screenshot1)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Screenshot](screenshot2)
 
 
 ## Demonstração
@@ -35,6 +35,8 @@ utilizadas as seguintes bibliotecas:
 💚Vue Preloader
 
 ✔ Vue Multislect 
+
+📃 Vue Final Modal
 
 
 
@@ -58,7 +60,7 @@ utilizadas as seguintes bibliotecas:
  - [Tailwindcss](https://tailwindcss.com/)
  - [Vue Preloader](https://www.npmjs.com/package/vue-ui-preloader)
  - [Vue Multislect](https://www.npmjs.com/package/vue-ui-preloader)
-
+- [Vue Final Modal](https://vue-final-modal.org/)
 
 ## Autores
 
