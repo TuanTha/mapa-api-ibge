@@ -1,5 +1,5 @@
 
-# 🌍 Vue 3 - API IBGE
+# 🌍 Mapa Vue 3
 
 ❇ Aplicação com o intuito de disponibilziar/exibir o nome de todas
 as cidades de um estado e seus respectivos indicadores, de acordo
