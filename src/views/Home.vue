@@ -112,7 +112,7 @@
       <div class="modal__content">
       <nav id="navmodal" class="h-px"><h5 class="pt-2 text-white"> {{ cidade }} / {{ state[0] }} </h5></nav>
       
-      <section class="mt-24 mr-5 ml-5   lg:ml-5 lg:mr-5 lg:mt-10">
+      <section class="mt-24 mr-5 ml-5   lg:ml-5 lg:mr-5 lg:mt-14">
       
       <table>
   <tr>

@@ -1,7 +1,66 @@
-# Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# 🌍 VUE 3 - API IBGE
 
-## Recommended IDE Setup
+❇ Aplicação com o intuito de disponibilziar/exibir o nome de todas
+as cidades de um estado e seus respectivos indicadores, de acordo
+com a necessidade do usuário.
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+🚧   Em desenvolvimento...  🚧
+
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Demonstração
+
+https://mapa-api-ibge.vercel.app/
+
+
+
+
+## 🛠 Tecnologias Utilizadas 
+
+A aplicação faz o uso do framework Vue 3, para o suporte de todas
+as suas devidas funcionalidades por meio da
+composition API, axios e 💦Tailwindcss, responsável pela
+estilização dos componentes das views. Além disso, foram
+utilizadas as seguintes bibliotecas:
+
+
+💚Vue Preloader
+
+✔ Vue Multislect 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Links
+
+ - [Vue 3](https://v3.vuejs.org/)
+ - [Tailwindcss](https://tailwindcss.com/)
+ - [Vue Preloader](https://www.npmjs.com/package/vue-ui-preloader)
+ - [Vue Multislect](https://www.npmjs.com/package/vue-ui-preloader)
+
+
+## Autores
+
+- [@tauansilva](https://www.instagram.com/tauansilva00/?hl=pt-br)
+
