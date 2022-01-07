@@ -11,7 +11,7 @@ com a necessidade do usuário.
 
 ## Screenshots
 
-![Screenshot](screenshot1.png)
+![screenshot1](https://user-images.githubusercontent.com/54295575/148573277-bbdbc8a8-7e2b-4f09-b7ef-b5ee922552fb.PNG)
 
 ![Screenshot](screenshot2.png)
 
