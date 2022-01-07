@@ -1,5 +1,5 @@
 
-# 🌍 VUE 3 - API IBGE
+# 🌍 Vue 3 - API IBGE
 
 ❇ Aplicação com o intuito de disponibilziar/exibir o nome de todas
 as cidades de um estado e seus respectivos indicadores, de acordo
@@ -39,6 +39,14 @@ utilizadas as seguintes bibliotecas:
 ✔ Vue Multislect 
 
 📃 Vue Final Modal
+
+## ⚙ Para executar/editar o projeto
+
+1 - Clone o repositório 
+
+2 - Digite "yarn install"
+
+3 - Digite "yarn dev"
 
 
 
