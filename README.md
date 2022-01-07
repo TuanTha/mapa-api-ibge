@@ -11,9 +11,9 @@ com a necessidade do usuário.
 
 ## Screenshots
 
-![Screenshot](screenshot1)
+![Screenshot](screenshot1.png)
 
-![Screenshot](screenshot2)
+![Screenshot](screenshot2.png)
 
 
 ## Demonstração
