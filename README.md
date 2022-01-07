@@ -1,7 +1,7 @@
 
 # 🌍 Mapa Vue 3
 
-❇ Aplicação com o intuito de disponibilziar/exibir o nome de todas
+❇ Aplicação com o intuito de disponibilizar/exibir o nome de todas
 as cidades de um estado e seus respectivos indicadores, de acordo
 com a necessidade do usuário.
 
@@ -39,6 +39,8 @@ utilizadas as seguintes bibliotecas:
 ✔ Vue Multislect 
 
 📃 Vue Final Modal
+
+🗃 Vue router
 
 ## ⚙ Para executar/editar o projeto
 
