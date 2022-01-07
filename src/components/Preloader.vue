@@ -2,7 +2,7 @@
  <transition name="fade">
    <div v-if="show" class="preloader">
      <div class="logo">
-       <img alt="Vue logo" src="../images/agility.svg">
+       <img alt="" src="">
      </div>
      <div class="circles">
        <div class="circle"></div>
